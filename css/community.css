@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+.contenido-nuevo {
+  text-align: center;
+  height: 100%; 
+}
+input {
+}
+
+.opciones {
+  display: inline;
+  margin-top: 2%;
+}
+
+.imgs {
+  width: 400px;
+  height: auto;
+  padding: 1%;
+}
+
+.imgs {
+  margin: 20%;
+  width: 300px;
+  height: auto;
+}
+
+.cn {
+  text-align: justify;
+}
+
+.card {
+  border-radius: 5px;
+  background-color: gray;
+}

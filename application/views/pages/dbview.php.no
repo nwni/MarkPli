@@ -1,0 +1,305 @@
+
+
+<table class="table table-bordered" align="center">
+	<thead>
+		<tr>
+		  <th>id</th>
+		  <th>Campaña</th>		  
+		  <th>Titulo</th>
+		  <th>Descripcion</th>
+		  <th>Tipo Post</th>
+		  <th>Hashtags</th>
+		  <th>Media</th>
+		  <th>Estado</th>
+		</tr>
+	</thead>
+
+	<?php 
+
+	if(isset($records))  { ?>
+		<?php foreach ($records as $row) : ?>
+		<tr>
+			<td class="cid_post" name="id_post">
+				<?php echo $row['id_post']; ?>
+			</td>
+			<td class="cnombre_campana" name="nombre_campana">
+				<?php echo $row['nombre_campana']; ?>
+			</td>				
+			<td class="cnombre_contenido" name="nombre_contenido">
+				<?php echo $row['nombre_contenido']; ?>
+			</td>
+			<td class="cdescripcion" name="descripcion">
+				<?php echo $row['descripcion']; ?>
+			</td>
+			<td class="ctipo" name="tipo">
+				<?php echo $row['tipo']; ?>
+			</td>
+			<td class="chashtags" name="hashtags">
+				<?php echo $row['hashtags']; ?>
+			</td>
+			<td class="clink_img" name="link_img">
+				<?php echo $row['link_img']; ?>
+			</td>
+			<td class="cestado" name="estado">
+				<?php echo $row['estado']; ?>
+			</td>
+			<td>
+			<form name="form" id="form">
+					<input type="button" name="bForm" id="feed<?php echo $row['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary bForm" onclick="event.preventDefault();"></input>
+
+				</form>
+			</td>	
+		</tr>
+	<?php endforeach; ?>
+	<?php }?>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="idcampana"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary bPost" name="bPost" onclick='event.preventDefault();'>Upload!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+	
+$(document).ready(function(){
+
+	$('.bForm').on('click', function(e){
+	let closestTr = $(this).closest('tr');
+
+	let mTitle = document.getElementById('idcampana');
+	let mBody = document.getElementById('idModalBody');
+
+	var id_post = closestTr.find('.cid_post').text().trim();
+	var nombre_campana = closestTr.find('.cnombre_campana').text().trim();
+	let nombre_contenido = closestTr.find('.cnombre_contenido').text().trim();
+	let descripcion = closestTr.find('.cdescripcion').text().trim();
+	let tipo = closestTr.find('.ctipo').text().trim();
+	let tags = closestTr.find('.ctags').text().trim();
+	let hashtags = closestTr.find('.chashtags').text().trim();
+	let link_img = closestTr.find('.clink_img').text().trim();
+/*
+	C L E A N    T H I S   S H I T   A S A P
+
+*/
+	//Creates the body of the post with the information from the table
+	if (tipo == 'video') {
+		var modalBody = `
+			<video src="${link_img}" id="url-post" class="img-responsive" style="padding-left: 0px;  padding-right: 0px; width: 100%;" controls none></video>
+			
+			<div class="modalText">
+				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h6 class="fecha">${id_post}</h6>
+				<p class="texto" id="text-post">${descripcion}</p>
+				<p class="tags" id="tags-post">${tags}</p>
+				<p class="hashtags" id="hashtags-post">${hashtags}</p>
+				<span style="display:none" id="tipo-post">${tipo}</span>
+			</div>
+		`;			
+	} else if(tipo == 'photo'){
+		var modalBody = `
+			
+			<img src="${link_img}" id="url-post" alt="imagen" class="img-responsive" style="padding-left: 0px;  padding-right: 0px; width: 100%;>
+			
+			<div class="modalText">
+				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h6 class="fecha">${id_post}</h6>
+				<p class="texto" id="text-post">${descripcion}</p>
+				<p class="tags" id="tags-post">${tags}</p>
+				<p class="hashtags" id="hashtags-post">${hashtags}</p>
+				<span style="display:none" id="tipo-post">${tipo}</span>
+			</div>
+		`;
+	} else{
+		var modalBody = `
+			
+			<div class="modalText">
+				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h6 class="fecha">${id_post}</h6>
+				<p class="texto" id="text-post">${descripcion}</p>
+				<p class="tags" id="tags-post">${tags}</p>
+				<p class="hashtags" id="hashtags-post">${hashtags}</p>
+				<span style="display:none" id="tipo-post">${tipo}</span>
+			</div>
+		`;		
+	}
+
+	$('#exampleModal').modal('show');	
+
+	document.getElementById('idcampana').innerHTML = nombre_campana;
+	document.getElementById('modal-body').innerHTML = modalBody;
+
+	});	
+
+/*	
+Once the post is created and displayed in the modal, we want to either Accept it and post it on Facebook or rejected both of this options will modify a NON EXISTING VALUE (at the moment tho) which is it's state, meaning update the post state on it's table
+*/
+
+	$('.bPost').on('click', function(e){
+		var postType = document.getElementById('tipo-post').innerHTML;
+
+		var title = document.getElementById('title-post').innerHTML;
+		var tags = document.getElementById('tags-post').innerHTML;
+		var hashtags = document.getElementById('hashtags-post').innerHTML;
+		var message, url, description, file_url;
+		var confirmation = confirm("Presiona 'Ok' para postear");
+		if (confirmation) {
+			switch(postType){
+				case 'photo':
+					message = (document.getElementById('text-post').innerHTML) + '\n' + hashtags;
+					url = document.getElementById('url-post').getAttribute('src');
+					postFB(postType, title, message, url, null, null);
+				break;
+				case 'status':
+					message = (document.getElementById('text-post').innerHTML)  + '\n' + hashtags;
+					postFB(postType, title, message, null, null, null);
+				break;
+				case 'video':
+					description = (document.getElementById('text-post').innerHTML)  + '\n' + hashtags;
+					file_url = document.getElementById('url-post').getAttribute('src');
+					postFB(postType, title, null, null, description, file_url);
+				break;
+				default:
+					console.log("nowhereman");
+				break;
+			}
+		} else{
+			alert("Cancelado");
+		}
+	});
+
+});
+
+
+/*
+	C L E A N    T H I S     A S A P
+*/
+
+function postFB(postType, title, message, url, description, file_url) {
+	var authResp = FB.getAuthResponse();
+	if (authResp === null) {
+		alert("ERROR\n Primero Valida tus credenciales\n en el boton superior derecho");
+	}
+	switch(postType){
+		case 'photo':
+			FB.api('/me/accounts', 'get', {
+				access_token : authResp.accessToken
+			}, function(response){
+
+			console.log(response); // this is returning an object with the accounts
+			FB.api('/me/permissions', 'get', {
+				access_token : pageAccessToken
+			}, function(resp){console.log(resp)});
+
+	      	// find the page access token for the page we want to admin, same as my PHP script
+	      	var pageAccessToken = ''; 
+	      	for(i in response.data){
+	      		if(response.data[i].id == pageId) {
+	      			pageAccessToken = response.data[i].access_token;
+	      			// do the actual post now
+	      			FB.api('/' + pageId + '/photos', 'post', {
+	      				title: title,
+	      				message: message,
+	      				url: url,
+	      				access_token : pageAccessToken
+	      			}, function(info){
+	      				console.log(info);
+	      				if (info.id != 'undefined') {
+	      					$('#exampleModal').modal('hide');
+	      					alert("Posteado en Facebook!");
+	      				}	      				
+	      			});
+	      		}
+	      	}
+	      }); 
+		break;
+		case 'status':
+			FB.api('/me/accounts', 'get', {
+				access_token : authResp.accessToken
+			}, function(response){
+
+			console.log(response); // this returns an object with the accounts
+			FB.api('/me/permissions', 'get', {
+				access_token : pageAccessToken
+			}, function(resp){console.log(resp)});
+
+	      	// find the page access token for the page we want to admin, same as my PHP script
+	      	var pageAccessToken = ''; 
+	      	for(i in response.data){
+	      		if(response.data[i].id == pageId) {
+	      			pageAccessToken = response.data[i].access_token;
+	      			// do the actual post now
+	      			FB.api('/' + pageId + '/feed', 'post', {
+	      				//name: title,
+	      				message: message,
+	      				access_token : pageAccessToken
+	      			}, function(info){
+	      				console.log(info);
+	      				if (info.id != 'undefined') {
+	      					$('#exampleModal').modal('hide');
+	      					alert("Posteado en Facebook!");	
+	      				}
+	      			});
+	      		}
+	      	}
+	      }); 		
+		break;
+		case 'video':
+			FB.api('/me/accounts', 'get', {
+				access_token : authResp.accessToken
+			}, function(response){
+
+			console.log(response); // this is returning an object with the accounts
+			FB.api('/me/permissions', 'get', {
+				access_token : pageAccessToken
+			}, function(resp){console.log(resp)});
+
+	      	// find the page access token for the page we want to admin, same as my PHP script
+	      	var pageAccessToken = ''; 
+	      	for(i in response.data){
+	      		if(response.data[i].id == pageId) {
+	      			pageAccessToken = response.data[i].access_token;
+	      			// do the actual post now
+	      			FB.api('/' + pageId + '/videos', 'post', {
+	      				title: title,
+	      				description: description,
+	      				file_url: file_url,
+	      				access_token : pageAccessToken
+	      			}, function(info){
+	      				console.log(info);
+	      				if (info.id != 'undefined') {
+	      					$('#exampleModal').modal('hide');	
+	      					alert("Posteado en Facebook!");
+	      				}      				
+	      			});
+	      		}
+	      	}
+	      }); 		
+		break;
+		default:
+			alert("NOT A VALID OPTION");
+		break;
+	}
+
+}
+
+
+</script>
+
