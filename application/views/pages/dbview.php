@@ -90,7 +90,7 @@
         <button type="button" class="btn btn-warning btn-Pausar" name="btn-Pausar" onclick='event.preventDefault();'>Pausar</button>               
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary btn-Aceptar" name="btn-Aceptar" onclick='event.preventDefault();'>Aceptar</button>        
-        <!-- <button type="button" class="btn btn-primary bPost" name="bPost" onclick='event.preventDefault();'>Upload!</button> -->
+        <button type="button" class="btn btn-primary bPost" name="bPost" onclick='event.preventDefault();'>Upload!</button>
       </div>
     </div>
   </div>

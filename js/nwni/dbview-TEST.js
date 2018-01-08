@@ -54,6 +54,37 @@ function ajaxCall() {
 }
 
 
+$('.bPost').on('click',  function(e){
+	var a = document.getElementById('id-post').innerHTML;
+	console.log("Manual Post " + a);
+	
+	let descripcion = document.getElementById('text-post').innerHTML;
+	let tipo = document.getElementById('tipo-post').innerHTML;
+	let estado = document.getElementById('estado-post').innerHTML;
+	let hashtags = document.getElementById('hashtags-post').innerHTML;
+	let url_post = document.getElementById('url-post').src;
+	console.log("URL " + url_post);
+	var message = descripcion + "\n" + hashtags;
+	switch(tipo){
+		case 'photo':
+			postPhoto(message, url_post);
+				console.log(message, url_post);
+		break;
+		case 'status':
+			console.log("Estado");
+			//console.log(message);
+			postStatus(message);
+				//console.log("Estado: " + nombre_campana + descripcion + hashtags);
+		break;
+		case 'video':
+			postVideo(message, url_post);
+			console.log(message, url_post);
+		break;
+		default:
+			console.log("JAJAJA nada");
+		break;
+	}
+});
 
 
 
@@ -77,8 +108,8 @@ function ajaxCall() {
         let tipo = closestTr.find('.ctipo').text().trim();
         let estado = closestTr.find('.cestado').text().trim();
         let hashtags = closestTr.find('.chashtags').text().trim();
-        let link_img = closestTr.find('.clink_img').text().trim();
-
+		let link_img = closestTr.find('.clink_img').text().trim();
+		console.log("URL1 " + link_img);
 /*
 	C L E A N    T H I S   S H I T   A S A P
 
@@ -99,6 +130,7 @@ function ajaxCall() {
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>
+				<span id="link-post">${link_img}</span>
 
 			</div>
 		`;			
@@ -115,6 +147,7 @@ function ajaxCall() {
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>
+				<span id="link-post">${link_img}</span>
 
 			</div>
 		`;
@@ -130,7 +163,6 @@ function ajaxCall() {
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>
-
 			</div>
 		`;		
 	}
