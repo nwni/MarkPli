@@ -50,6 +50,34 @@
 
             </div>
 
+            <div class="form-group">
+                <label for="tags">Tipo de Publicación</label>
+                <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control">
+                    <option label="--- Menu ---"></label>
+                    <option label="Platillos ---"></label>
+                    <option value="Cortes">Cortes</option>
+                    <option value="Ensaldas">Ensaldas</option>
+                    <option value="Infantil">Infantil</option>
+                    <option label="Bebidas ---"></label>
+                    <option value="Con Alcohol">Con Alcohol</option>
+                    <option value="Sin Alcohol">Sin Alcohol</option>
+                    <option value="Postres">Postres</option>
+                    <option value="Recomendaciones">Recomendaciones</option>
+                    <option label="--- Social Media Engagement ---"></label>
+                    <option value="Promociones Exclusivas">Promociones Exclusivas</option>
+                    <option value="Encuestas">Encuestas</option>
+                    <option value="Reseñas">Reseñas</option>
+                    <option label="--- Consejos ---"></label>
+                    <option value="Recetas">Recetas</option>
+                    <option value="Salud">Salud</option>
+                    <option label="--- Días Festivos ---"></label>
+                    <option value="Sucesos Importantes">Sucesos Importantes</option>
+                    <option value="Menciones Honorificas">Menciones Honorificas</option>
+                    <option label="--- Trabajadores ---"></label>
+                    <option value="Behind the Scenes">Behind the Scenes</option>
+                    <option value="Interacción con el Staff">Interacción con el Staff</option>
+                </select>
+            </div>
 
                 <div class="form-group">
                     <label>Fecha para publicar</label>

@@ -30,7 +30,9 @@ class Posts_model extends CI_Model {
         'start' => $this->_formatDate($this->input->post("to")),
         'end' => $this->_formatDate($this->input->post("to")),
         'class' =>$tipo_evento,
-        'fecha_publicar' => $this->input->post('to')
+        'fecha_publicar' => $this->input->post('to'),
+        'TipoPublicacion' => $this->input->post('txtTipoPublicacion'),
+        'fid_campana'  => $this->input->post('txtnombrecampana')
     );
 
     return $this->db->insert('posts', $data);
@@ -50,7 +52,9 @@ public function set_postEs($fidcontenido, $fidcomm){
         'start' => $this->_formatDate($this->input->post("to")),
         'end' => $this->_formatDate($this->input->post("to")),
         'class' =>$tipo_evento,
-        'fecha_publicar' => $this->input->post('to')
+        'fecha_publicar' => $this->input->post('to'),
+        'TipoPublicacion' => $this->input->post('txtTipoPublicacion'),
+        'fid_campana'  => $this->input->post('txtnombrecampana')
     );
 
     return $this->db->insert('posts', $data);
