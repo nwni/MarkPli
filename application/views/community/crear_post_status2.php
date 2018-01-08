@@ -16,7 +16,7 @@
 <body>
 <div class="container">
  
-    <h1 class="text-center heading">Añadir un nuevo post al calendario</h1>
+    <h1 class="text-center heading">Crear Estado</h1>
 
     <hr>
       <?php echo form_open('contenidos/crearEstado/'); ?>
@@ -49,15 +49,6 @@
                  </select>
 
             </div>
-
-
-                <div class="form-group">
-                    <label>Fecha para publicar</label>
-                    <div class='input-group date' id='to'>
-                        <input type='text' name="to" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </div>
-                </div>
             
 
 
