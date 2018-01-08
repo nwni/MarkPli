@@ -1,6 +1,6 @@
   <div class="container" align="center">
 
-    <h1>Agendar Publicaion Multimedia</h1>
+    <h1>Agendar Publicación Multimedia</h1>
 
     <table class="table table-bordered" align="center">
       <thead>
