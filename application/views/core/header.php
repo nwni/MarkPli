@@ -29,7 +29,7 @@
             <a class="nav-link" href="<?php echo base_url(); ?>Cupload">Gestionar Contenido</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>Contenidos">Crear Publicacion</a>
+            <a class="nav-link" href="<?php echo base_url(); ?>tipo_post">Crear Publicacion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>posts">Ultimos posts creados</a>

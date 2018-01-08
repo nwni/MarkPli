@@ -5,7 +5,7 @@ class Events extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('core/header');
-		$this->load->view("community/tipos_de_post");
+		$this->load->view("community/tipos_de_post2");
     	$this->load->view('core/footer');
 		
 	}

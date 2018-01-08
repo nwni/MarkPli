@@ -70,7 +70,23 @@ public function crearPostMul($idcon = 0, $idcom = 0){
      $result=$this->Mlista->listaC();
         $data= array('result'=>$result);
     //$this->load->view('core/header');
+    $this->load->view('community/crear_post_status2',$data);
+    //$this->load->view('core/footer');
+  }
+
+ public function crearPostEstado2(){
+
+     $result=$this->Mlista->listaC();
+        $data= array('result'=>$result);
+    //$this->load->view('core/header');
     $this->load->view('community/crear_post_status',$data);
+    //$this->load->view('core/footer');
+  }
+
+ public function crearPostMultimdia2($id){
+    $data['contenido'] = $this->contenidos_model->get_contenidos($id);
+    //$this->load->view('core/header');
+    $this->load->view('community/crear_post_multimedia2', $data);
     //$this->load->view('core/footer');
   }
 
@@ -83,6 +99,14 @@ public function crearPostMul($idcon = 0, $idcom = 0){
   }
 
   public function mostrarContenidoMul(){
+    $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    $this->load->view('core/header');
+    $this->load->view('community/mostra_contenido_multimedia2', $data);
+    $this->load->view('core/footer');
+  }
+
+
+  public function mostrarContenidoMul2(){
     $data['contenidos'] = $this->contenidos_model->get_contenidos();
     $this->load->view('core/header');
     $this->load->view('community/mostra_contenido_multimedia', $data);
