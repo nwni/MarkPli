@@ -64,9 +64,10 @@ $('.bPost').on('click',  function(e){
 	let hashtags = document.getElementById('hashtags-post').innerHTML;
 
 	var message = descripcion + "\n" + hashtags;
+	let url_post = document.getElementById('link-post').innerHTML;
 	switch(tipo){
+		
 		case 'photo':
-		let url_post = document.getElementById('url-post').src;
 		console.log("URL " + url_post);
 			postPhoto(message, url_post);
 				console.log(message, url_post);
@@ -78,6 +79,7 @@ $('.bPost').on('click',  function(e){
 				//console.log("Estado: " + nombre_campana + descripcion + hashtags);
 		break;
 		case 'video':
+		
 		console.log("URL " + url_post);
 			postVideo(message, url_post);
 			console.log(message, url_post);
@@ -165,6 +167,7 @@ $('.bPost').on('click',  function(e){
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>
+				<span style="display:none" id="link-post">${link_img}</span>
 			</div>
 		`;		
 	}
@@ -312,7 +315,7 @@ function postStatus(message){
                   if (info.id != 'undefined') {
                       //$('#exampleModal').modal('hide');
                       alert("Posteado en Facebook! ");
-                      console.log("ID-POST-> " + id_post);
+                      //console.log("ID-POST-> " + id_post);
                       //location.reload(true);
                   }
               });
