@@ -37,11 +37,12 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>validacion">Dashboard</a>
           </li> 
-
-               <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>calendar">Agendar Publicaciones</a>
-          </li>  
-
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
+          </li>
 
         </ul>
                         <li>

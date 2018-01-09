@@ -102,6 +102,9 @@ function checkLoginState() {
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>calendar">Agendar Publicaciones</a>
           </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
+          </li>
         </ul>
 
       </div>

@@ -26,15 +26,17 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>Contenidos">Crear Publicacion</a>
           </li>
-
-               <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>calendar">Agendar Publicaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
           </li>      
-        </ul>
-          </ul>
-                        <li>
-                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
-                </li>
+            </ul>
+            </ul>
+            <li>
+              <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+            </li>
       </div>          
     </nav>
 

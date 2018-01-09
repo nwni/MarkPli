@@ -22,13 +22,15 @@
          <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>Cupload">Gestionar Contenido</a>
           </li>
-     
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
+          </li>
+        </ul>
         </ul>
 
-          </ul>
-                        <li>
-                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
-                </li>
+        <li>
+        <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+        </li>
       </div>          
     </nav>
 
