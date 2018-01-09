@@ -114,7 +114,7 @@ function checkLoginState() {
 
       </div>
         <fb:login-button id="fb-btn" scope="manage_pages,publish_pages,public_profile,email,user_birthday,user_location,user_posts" onlogin="checkLoginState();">
-        </fb:login-button>
+      </fb:login-button>
           <button type="button" class="btn btn-danger btn-sm" id="logout" href="#" onclick="logout()">logout</button>
             
     </nav>

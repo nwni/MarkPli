@@ -109,7 +109,8 @@ $('.bPost').on('click',  function(e){
         var id_post = closestTr.find('.cid_post').text().trim();
         var nombre_campana = closestTr.find('.cnombre_campana').text().trim();
         let nombre_contenido = closestTr.find('.cnombre_contenido').text().trim();
-        let descripcion = closestTr.find('.cdescripcion').text().trim();
+		let descripcion = closestTr.find('.cdescripcion').text().trim();
+		let fechaPublicar = closestTr.find('.cfechaPublicar').text().trim();
         let tipo = closestTr.find('.ctipo').text().trim();
         let estado = closestTr.find('.cestado').text().trim();
         let hashtags = closestTr.find('.chashtags').text().trim();
@@ -128,7 +129,7 @@ $('.bPost').on('click',  function(e){
 			
 			<div class="modalText">
 				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
-				<h6 class="fecha">${id_post}</h6>				
+				<h6 class="fecha">${fechaPublicar}</h6>				
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
 
@@ -145,7 +146,7 @@ $('.bPost').on('click',  function(e){
 			<img src="${link_img}" id="url-post" alt="imagen" class="img-responsive" style="padding-left: 0px;  padding-right: 0px; width: 100%;>
 			<div class="modalText">
 				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
-				<h6 class="fecha">${id_post}</h6>
+				<h6 class="fecha">${fechaPublicar}</h6>
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
 
@@ -161,7 +162,7 @@ $('.bPost').on('click',  function(e){
 			
 			<div class="modalText">
 				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
-				<h6 class="fecha">${id_post}</h6>
+				<h6 class="fecha">${fechaPublicar}</h6>
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
 				<p class="hashtags" id="hashtags-post">${tipo}</p>

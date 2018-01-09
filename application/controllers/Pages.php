@@ -93,7 +93,9 @@
 		public function publicado(){
 			$id = $this->input->post('id');
 			$state = 'publicado';
+			$class = 'event-success';
 			$this->post_model->updateState($id, $state);
+			$this->post_model->updateEvent($id, $class);
 		}
 
 		//public function delete($id){ //DE ESTA FORMA PARA RECIBIR DIRECTO DEL BOTON

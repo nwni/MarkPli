@@ -31,14 +31,16 @@
       <div class="col-xs-4">
         <div class="col-xs-12">
             <div class="form-group">
-              <label for="titulo">Descripción:</label><input type="text" class="form-control" name="descripcion" placeholder="Describe brevemente el proposito de este post">
+            <br>
+            <br>
+              <label for="titulo">Contenido:</label><input type="text" class="form-control" name="descripcion" placeholder="Describe brevemente el proposito de este post">
             </div>
             <div class="form-group">
-              <label for="contenido">Contenido:</label><textarea name="contenido" id="desc" cols="48" rows="3" class="form-control" placeholder="arma tu publicacion"></textarea>
+              <label for="contenido" style="display:none">Contenido:</label><textarea style="display:none" name="contenido" id="desc" cols="48" rows="3" class="form-control" placeholder="arma tu publicacion"></textarea>
             </div>
 
             <div class="form-group">
-              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="separar,por,comas" name="hashtags">
+              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="#ejemplo #otro" name="hashtags">
             </div>
             <br>
             <div class="form-group">

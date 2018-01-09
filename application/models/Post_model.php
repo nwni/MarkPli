@@ -75,7 +75,12 @@ class Post_model extends CI_Model {
     	$sql = "DELETE FROM posts WHERE id_post = " . "'" . $id . "'";    	
     	$query = $this->db->query($sql);
     	//return $query->result_array();
-    }	
+	}
+	
+	function updateEvent($id, $class){
+		$sql = "UPDATE posts SET class = " . "'" . $class . "'" . " WHERE id_post = " . $id;
+		$query = $this->db->query($sql);
+	}
 
 	// function search() {
 	// 	$queryBus=$this->db->get('posts');
