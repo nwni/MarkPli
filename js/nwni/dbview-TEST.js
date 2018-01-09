@@ -360,7 +360,9 @@ function postPhoto(message, link_img){
                     access_token : pageAccessToken
                 }, function(info){
 					console.log(info);
-                    if (info.id != 'undefined') {
+                    if(!info.id){
+						alert("Error, publicación duplicada! ");
+					  }else if (info.id != 'undefined') {
                         //$('#exampleModal').modal('hide');
 						alert("Posteado en Facebook! ");
 						changePublicado();
@@ -401,7 +403,9 @@ function postVideo(message, link_img){
                   access_token : pageAccessToken
               }, function(info){
 				  console.log(info);
-                  if (info.id != 'undefined') {
+                  if(!info.id){
+					alert("Error, publicación duplicada! ");
+				  }else if (info.id != 'undefined') {
                       //$('#exampleModal').modal('hide');	
 					  alert("Posteado en Facebook! ");
 					  changePublicado();
