@@ -28,17 +28,15 @@
                              </select>
 							<div id='msg_contraseña'></div>  
 						</div>
- 				<button class="btn btn-primary" type="summit">Enviar</button><div>  </div>
+ 				<button class="btn btn-primary btn-registrar" type="summit" name="btn-registrar" >Registrar</button>
+				 <a href="index.php/usuario/mostrar" class="btn btn-primary">Mostrar</a>
  			</form>
- 			<a href="index.php/usuario/mostrar">Mostrar</a>
+ 			
  		</div>
  	
  		<br><br>
  	
  	</div>
 </div>
-
-
-
 </body>
 </html>

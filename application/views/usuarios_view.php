@@ -11,7 +11,9 @@
                 <!-- Page Heading esto es lo que cambiara en las vistas-->
                 <div class="panel panel-default">
                       <!-- Default panel contents -->
-                      <div class="panel-heading">usuarios</div>
+                      <div class="panel-heading">
+                      <h2>Usuarios Registrados</h2>
+                      </div>
 
                       
                       <table class="table table-hover">
