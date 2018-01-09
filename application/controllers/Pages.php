@@ -30,12 +30,15 @@
 		// 	$this->load->view('templates/footer');
 		// }
 
-		//This method handles the posts request without parameters
+
+
+	//This method handles the posts request without parameters
 		public function showPosts() {
 
 			$data = array();
 
             $data['records'] = $this->post_model->getRows();
+            $data['records2'] = $this->post_model->getRows2();
             //$data['text'] = $data['post']['title'];
             //load the details page view
             //print_r($data);
@@ -46,22 +49,6 @@
 
             //return print json_encode($data);
 		}
-
-		//This method handles the post request with parameters
-		public function showPost() {
-
-			// Stores the item send by the {post} method
-			$data = $this->input->post('id');
-
-			$query = array();
-			// Calls the {getRows} method from the model and sends a parameter wich is an user ID
-			// stores the result as an array
-			$query['rquery'] = $this->post_model->getRows($data);
-
-			// returns the result formated as json
-            return print json_encode($query);
-		}
-
 		//I dont need this shit
 		public function mostrar(){
 			if ($this->input->is_ajax_request()) {

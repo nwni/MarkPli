@@ -71,6 +71,63 @@
 </table>
 
 
+<!-- tabla para estados
+ -->
+ <h1>Posts de estados</h1>
+ <table class="table table-bordered" align="center" >
+	<thead>
+		<tr>
+		  <th>No. de post</th>
+		  <th>Campaña</th>		  
+		  <th>Descripcion</th>
+		  <th>Hashtags</th>
+		  <th>Fecha para publicar</th>
+		  <th>Estado</th>
+		</tr>
+	</thead>
+
+	<?php 
+
+	if(isset($records2))  { ?>
+		<?php foreach ($records2 as $row2) : ?>
+		<tr>
+			<td class="cid_post" name="id_post">
+				<?php echo $row2['id_post']; ?>
+			</td>
+			<td class="cnombre_campana" name="nombre_campana">
+				<?php echo $row2['nombre_campana']; ?>
+			</td>				
+			
+			<td class="cdescripcion" name="descripcion">
+				<?php echo $row2['descripcion']; ?>
+			</td>
+			
+
+
+			<td class="chashtags" name="hashtags">
+				<?php echo $row2['hashtags']; ?>
+			</td>
+
+
+			<td class="cfechaPublicar" name="fecha_publicar">
+				<?php echo $row2['fecha_publicar']; ?>
+			</td>
+
+			<td class="cestado" name="estado">
+				<?php echo $row2['estado']; ?>
+			</td>
+			<td>
+			<form method="post" name="form" id="form">
+					<input type="button" name="bForm" id="feed<?php echo $row2['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary bForm" onclick='event.preventDefault();'></input>
+			</form>
+			
+			<button type="button" class="btn btn-danger btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row2['id_post'];?>);" >Eliminar</button>
+			</td>	
+		</tr>
+	<?php endforeach; ?>
+	<?php }?>
+</table>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

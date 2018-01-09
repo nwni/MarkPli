@@ -10,11 +10,15 @@ class RedSemantica extends CI_Controller
 	}
     public function red(){
         $data = array();
-           $tipo = $this->session->userdata('tipos_usuarios');
+        $tipo = $this->session->userdata('tipos_usuarios');
         $data['records'] = $this->Red_model->getTypes();
 
           if ($tipo=='1') {
+<<<<<<< HEAD
+   // $data['contenidos'] = $this->contenidos_model->get_contenidos();
+=======
     //$data['contenidos'] = $this->contenidos_model->get_contenidos();
+>>>>>>> b0d5ab708fb15516c4724e6f4e774267823ddc80
     $this->load->view('templates/header');
           $this->load->view('pages/red_semantica', $data);
     $this->load->view('templates/footer');
