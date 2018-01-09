@@ -81,7 +81,10 @@ function checkLoginState() {
 
       <div class="collapse navbar-collapse" id="navbarsExample03">
         <ul class="navbar-nav mr-auto">
-       
+        
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url(); ?>Usuario">Gestionar Usuarios</a>
+          </li> 
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>campanas">Gestionar Campañas</a>
           </li> 
@@ -103,6 +106,10 @@ function checkLoginState() {
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
           </li>
+
+                 <li>
+                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+                </li>
         </ul>
 
       </div>

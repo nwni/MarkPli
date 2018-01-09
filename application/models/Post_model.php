@@ -13,7 +13,7 @@ class Post_model extends CI_Model {
 	//If it receives one, returns the information of that index
     function getRows($id = ""){
         if(!empty($id)){
-        	$sql = "SELECT p.id_post, cam.nombre_campana, con.nombre_contenido, p.descripcion, p.tipo, p.tags, p.hashtags, con.link_img, p.fecha_publicar, p.estado
+        	$sql = "SELECT p.id_post,cam.nombre_campana, con.nombre_contenido, p.descripcion, p.tipo, p.tags, p.hashtags, con.link_img, p.fecha_publicar, p.estado
 						FROM posts p
 						INNER JOIN contenidos con
 						ON p.fid_contenido = con.id_contenido
