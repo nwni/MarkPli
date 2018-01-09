@@ -290,7 +290,10 @@ function deletePost(id){
 
 function postStatus(message){
     //Uncomment the following to initialize the authResp
-    var authResp = FB.getAuthResponse();
+	var authResp = FB.getAuthResponse();
+	if (authResp === null) {
+		alert("ERROR\n Primero Valida tus credenciales\n en el boton superior derecho");
+	}
 
     FB.api('/me/accounts', 'get', {
         access_token : authResp.accessToken
@@ -311,8 +314,10 @@ function postStatus(message){
                   message: message,
                   access_token : pageAccessToken
               }, function(info){
-                  console.log(info);
-                  if (info.id != 'undefined') {
+				  console.log(info);
+				  if(!info.id){
+					alert("Error, publicación duplicada! ");
+				  }else if (info.id != 'undefined') {
 					  //$('#exampleModal').modal('hide');
 					  
 					  alert("Posteado en Facebook! ");
@@ -328,7 +333,10 @@ function postStatus(message){
 
 function postPhoto(message, link_img){
 	//Uncomment the following to initialize the authResp
-    var authResp = FB.getAuthResponse();
+	var authResp = FB.getAuthResponse();
+	if (authResp === null) {
+		alert("ERROR\n Primero Valida tus credenciales\n en el boton superior derecho");
+	}
     //Tomar el url
     FB.api('/me/accounts', 'get', {
         access_token : authResp.accessToken
@@ -351,12 +359,12 @@ function postPhoto(message, link_img){
                     url: link_img,
                     access_token : pageAccessToken
                 }, function(info){
-                    console.log(info);
+					console.log(info);
                     if (info.id != 'undefined') {
                         //$('#exampleModal').modal('hide');
 						alert("Posteado en Facebook! ");
 						changePublicado();
-                        //console.log(id_post);
+                        console.log(id_post);
                         //AQUI SUBIR LA IMAGEN
                     }	      				
                 });
@@ -367,7 +375,10 @@ function postPhoto(message, link_img){
 
 function postVideo(message, link_img){
 	//Uncomment the following to initialize the authResp
-    var authResp = FB.getAuthResponse();
+	var authResp = FB.getAuthResponse();
+	if (authResp === null) {
+		alert("ERROR\n Primero Valida tus credenciales\n en el boton superior derecho");
+	}
     FB.api('/me/accounts', 'get', {
         access_token : authResp.accessToken
     }, function(response){
@@ -389,7 +400,7 @@ function postVideo(message, link_img){
                   file_url: link_img,
                   access_token : pageAccessToken
               }, function(info){
-                  console.log(info);
+				  console.log(info);
                   if (info.id != 'undefined') {
                       //$('#exampleModal').modal('hide');	
 					  alert("Posteado en Facebook! ");
