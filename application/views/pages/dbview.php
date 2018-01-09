@@ -15,7 +15,6 @@
 		  <th>Titulo</th>
 		  <th>Descripcion</th>
 		  <th>Tipo Post</th>
-
 		  <th>Hashtags</th>
 		  <th>Fecha para publicar</th>
 		  <th>Estado</th>
