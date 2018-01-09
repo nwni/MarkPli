@@ -33,9 +33,10 @@
             </div>
 
             <div class="form-group">
-              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="separar,por,comas" name="hashtags">
+              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="#ejemplo #otro" name="hashtags">
             </div>
-         
+
+
              <div class="form-group">
               <label for="tags">Nombre de la campaña:</label>   
                   <select class="form-control" required="" name="txtnombrecampana">
@@ -51,33 +52,33 @@
             </div>
             
             <div class="form-group">
-                <label for="tags">Tipo de Publicación</label>
-                <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control">
-                    <option label="--- Menu ---"></label>
-                    <option label="Platillos ---"></label>
-                    <option value="Cortes">Cortes</option>
-                    <option value="Ensaldas">Ensaldas</option>
-                    <option value="Infantil">Infantil</option>
-                    <option label="Bebidas ---"></label>
-                    <option value="Con Alcohol">Con Alcohol</option>
-                    <option value="Sin Alcohol">Sin Alcohol</option>
-                    <option value="Postres">Postres</option>
-                    <option value="Recomendaciones">Recomendaciones</option>
-                    <option label="--- Social Media Engagement ---"></label>
-                    <option value="Promociones Exclusivas">Promociones Exclusivas</option>
-                    <option value="Encuestas">Encuestas</option>
-                    <option value="Reseñas">Reseñas</option>
-                    <option label="--- Consejos ---"></label>
-                    <option value="Recetas">Recetas</option>
-                    <option value="Salud">Salud</option>
-                    <option label="--- Días Festivos ---"></label>
-                    <option value="Sucesos Importantes">Sucesos Importantes</option>
-                    <option value="Menciones Honorificas">Menciones Honorificas</option>
-                    <option label="--- Trabajadores ---"></label>
-                    <option value="Behind the Scenes">Behind the Scenes</option>
-                    <option value="Interacción con el Staff">Interacción con el Staff</option>
-                </select>
-            </div>
+            <label for="tags">Tipo de Publicación</label>
+            <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control">
+                <option label="--- Menu ---"></label>
+                <option label="Platillos ---"></label>
+                <option value="1">Cortes</option>
+                <option value="1">Ensaldas</option>
+                <option value="1">Infantil</option>
+                <option label="Bebidas ---"></label>
+                <option value="1">Con Alcohol</option>
+                <option value="1">Sin Alcohol</option>
+                <option value="1">Postres</option>
+                <option value="1">Recomendaciones</option>
+                <option label="--- Social Media Engagement ---"></label>
+                <option value="2">Promociones Exclusivas</option>
+                <option value="2">Encuestas</option>
+                <option value="2">Reseñas</option>
+                <option label="--- Consejos ---"></label>
+                <option value="3">Recetas</option>
+                <option value="3">Salud</option>
+                <option label="--- Días Festivos ---"></label>
+                <option value="4">Sucesos Importantes</option>
+                <option value="4">Menciones Honorificas</option>
+                <option label="--- Trabajadores ---"></label>
+                <option value="5">Behind the Scenes</option>
+                <option value="5">Interacción con el Staff</option>
+            </select>
+        </div
 
           <div style="display: inline-flex;">
 
