@@ -84,11 +84,13 @@
         $(function () {
             $('#from').datetimepicker({
                 language: 'es',
-                minDate: new Date()
+                minDate: new Date(),
+                 format:'YYYY-MM-DD HH:mm:ss'
             });
             $('#to').datetimepicker({
                 language: 'es',
-                minDate: new Date()
+                minDate: new Date(),
+                 format:'YYYY-MM-DD HH:mm:ss'
             });
             
         });

@@ -43,7 +43,7 @@
           </td>
            <td>
           <?php echo "<a href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver | </a>"?>
-            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crearPostMultimdia/<?php echo $contenido['id_contenido']?>">Agandar</a>
+            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crearPostMultimdia/<?php echo $contenido['id_contenido']?>">Agendar</a>
 
 
 

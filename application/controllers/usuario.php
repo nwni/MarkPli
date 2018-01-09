@@ -35,9 +35,11 @@ public function mostrar(){
 	}
 	public function eliminarusuario(){
 			//$this->load->model('usuario');
+			$this->load->view('core/header');
 			$this->usuario_model->eliminar($this->input->post("id"));
 			$datos['usuarios']= $this->usuario_model->getUsuarios();
 			$this->load->view('usuarios_view.php',$datos);
+			$this->load->view('core/footer');
 	}
 
 	public function RegistroUsu(){
@@ -56,7 +58,8 @@ public function mostrar(){
 				$datos["tipos_usuarios"]=3;
 			}
 		}
-		$this->mostrar();
+   			 $this->usuario_model->nuevo($datos);		
+   			 $this->mostrar();
 		// print_r($_POST);
 		// exit;
 	}
