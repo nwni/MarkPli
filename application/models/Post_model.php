@@ -43,7 +43,6 @@ class Post_model extends CI_Model {
         if(!empty($id)){
         	$sql = "SELECT p.id_post, cam.nombre_campana, p.descripcion, p.tipo, p.tags, p.hashtags, p.fecha_publicar, p.estado
 						FROM posts p
-					
 						INNER JOIN campanas cam
 						ON p.fid_campana = cam.id_campana
 						WHERE p.id_post = ?

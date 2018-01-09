@@ -62,8 +62,9 @@ $('.bPost').on('click',  function(e){
 	let tipo = document.getElementById('tipo-post').innerHTML;
 	let estado = document.getElementById('estado-post').innerHTML;
 	let hashtags = document.getElementById('hashtags-post').innerHTML;
-
+	
 	var message = descripcion + "\n" + hashtags;
+	console.log("***********" + tipo);
 	let url_post = document.getElementById('link-post').innerHTML;
 	switch(tipo){
 		
@@ -163,7 +164,7 @@ $('.bPost').on('click',  function(e){
 				<h6 class="fecha">${id_post}</h6>
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
-
+				<p class="hashtags" id="hashtags-post">${tipo}</p>
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>

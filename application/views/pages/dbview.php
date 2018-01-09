@@ -97,18 +97,15 @@
 			<td class="cnombre_campana" name="nombre_campana">
 				<?php echo $row2['nombre_campana']; ?>
 			</td>				
-			
 			<td class="cdescripcion" name="descripcion">
 				<?php echo $row2['descripcion']; ?>
 			</td>
-			
-
-
 			<td class="chashtags" name="hashtags">
 				<?php echo $row2['hashtags']; ?>
 			</td>
-
-
+			<td class="ctipo" name="tipo">
+				<?php echo $row2['tipo']; ?>
+			</td>
 			<td class="cfechaPublicar" name="fecha_publicar">
 				<?php echo $row2['fecha_publicar']; ?>
 			</td>
