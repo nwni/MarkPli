@@ -103,6 +103,12 @@
 			$this->post_model->updateState($id, $state);
 		}
 
+		public function publicado(){
+			$id = $this->input->post('id');
+			$state = 'publicado';
+			$this->post_model->updateState($id, $state);
+		}
+
 		//public function delete($id){ //DE ESTA FORMA PARA RECIBIR DIRECTO DEL BOTON
 		public function delete(){ //ASÍ PARA AJAX
 			

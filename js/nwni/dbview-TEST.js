@@ -313,8 +313,10 @@ function postStatus(message){
               }, function(info){
                   console.log(info);
                   if (info.id != 'undefined') {
-                      //$('#exampleModal').modal('hide');
-                      alert("Posteado en Facebook! ");
+					  //$('#exampleModal').modal('hide');
+					  
+					  alert("Posteado en Facebook! ");
+					  changePublicado();
                       //console.log("ID-POST-> " + id_post);
                       //location.reload(true);
                   }
@@ -352,7 +354,8 @@ function postPhoto(message, link_img){
                     console.log(info);
                     if (info.id != 'undefined') {
                         //$('#exampleModal').modal('hide');
-                        alert("Posteado en Facebook! ");
+						alert("Posteado en Facebook! ");
+						changePublicado();
                         //console.log(id_post);
                         //AQUI SUBIR LA IMAGEN
                     }	      				
@@ -389,11 +392,35 @@ function postVideo(message, link_img){
                   console.log(info);
                   if (info.id != 'undefined') {
                       //$('#exampleModal').modal('hide');	
-                      alert("Posteado en Facebook! ");
+					  alert("Posteado en Facebook! ");
+					  changePublicado();
                       //console.log(id_post);
                   }      				
               });
           }
       }
   });     
+}
+
+
+function changePublicado(){
+	var id_post = document.getElementById('id-post').innerHTML;
+	console.log(baseUrl);
+	$.ajax({
+		type: 'POST',
+		url: baseUrl + 'Pages/publicado/',
+		data: {
+			'id' : id_post
+		},
+		success: function(id){
+			console.log("Publicado" + id);
+			$('#exampleModal').modal('hide');
+			//alert("Posteado en Facebook! ");
+			console.log("ID-POST-> " + id);
+			location.reload(true);	
+		},
+		error: function(err){
+			console.log(err);
+		}	
+	});
 }
