@@ -66,9 +66,9 @@
  			  </div>
 
 				 <div class="form-group">
-				 	<label for="file_id" class="col-lg-4 control-label">Link del contenido</label>
+				 	<label for="file_id" class="col-lg-4 control-label">Espera a que se genere el enlace para subir el contenido!</label>
 				 	<div class="col-lg-8">
-				 		<input type="text" class="form-control" name="userfile" id="userfile"> 
+				 		<input type="text" class="form-control" name="userfile" id="userfile" readonly> 
 					 </div>
  			  </div>
  			
