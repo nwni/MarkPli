@@ -36,6 +36,32 @@ class Post_model extends CI_Model {
             return $query->result_array();
         }
     }	
+//funcion para estados 
+
+
+       function getRows2($id = ""){
+        if(!empty($id)){
+        	$sql = "SELECT p.id_post, cam.nombre_campana, p.descripcion, p.tipo, p.tags, p.hashtags, p.fecha_publicar, p.estado
+						FROM posts p
+					
+						INNER JOIN campanas cam
+						ON p.fid_campana = cam.id_campana
+						WHERE p.id_post = ?
+						ORDER BY p.id_post ASC";
+            $query = $this->db->query($sql, array($id));
+            return $query->result_array();
+        }else{
+            //$query = $this->db->get('posts');
+            $sql = "SELECT p.id_post, cam.nombre_campana, p.descripcion, p.tipo, p.tags, p.hashtags, p.fecha_publicar, p.estado
+						FROM posts p
+						INNER JOIN campanas cam
+						ON p.fid_campana = cam.id_campana
+						WHERE p.contenido_bandera= 99
+						ORDER BY p.id_post ASC";
+            $query = $this->db->query($sql);
+            return $query->result_array();
+        }
+    }	
 
     function updateState($id, $state){
     	//$a = "je" + "'" + $state + "'" + "je";

@@ -56,7 +56,7 @@ public function set_postEs($fidcontenido, $fidcomm){
     $usu=$this->session->userdata('id_usuario');
     $data = array(
         'descripcion' => $this->input->post('descripcion'),
-        'fid_contenido' => 12,
+        'fid_contenido' =>null,
         'estado' => 'pendiente',
         'fid_sobrinity' => $usu,
         'fid_campana'=>$this->input->post('txtnombrecampana'),
