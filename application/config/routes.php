@@ -50,6 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 //route['destino'] = ['fuente']
+$route['red'] = 'RedSemantica/red';
 $route['delete'] = 'pages/delete';
 $route['validacion'] = 'pages/view';
 $route['posts'] = 'pages/showPosts';
