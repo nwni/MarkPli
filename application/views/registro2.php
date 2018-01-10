@@ -11,15 +11,15 @@
 
  <div id="inicio" class="container">
  	<center><h1>REGISTRO DE USUARIO</h1></center>
- 	<div class "row">
- 		<div class="col-md-4 col-md-offset-1">
+ 	<div class "row" >
+ 		<div class="col-md-6 col-md-offset-1">
  			<form method="POST"  action="<?php echo site_url('usuario/RegistroUsu');?>" role="form">
 						
-						<h2> Datos de usuario </h2>
-						<div class="form-group">
+						<div class="col-md-6 col-md-offset-1">
 							<label>Nombre de usuario:<input type="text"  name="NombreU" id="NombreU" required="" class="form-control"></label>
 							<div id='msg_usuario'></div>  
 							<label>Contraseña:<input type="password"  name="ContraseñaU" id="ContraseñaU" required="" class="form-control"></label>
+
 							<select name="Nomtipo" class="form-control" required>
                                               <option value="">Seleccione un tipo</option>  
                                               <option value="Comunnity">Comunnity</option>  
