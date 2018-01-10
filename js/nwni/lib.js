@@ -167,6 +167,12 @@ function setElements(isLoggedIn){
 	}
 }
 
+function logout(){
+	FB.logout(function(response){
+			setElements(false);
+	});
+}
+
 //Builds the card with the user/page info
 function buildProfile(obj){
 	let title = obj.name;
@@ -522,9 +528,5 @@ function commentsChart(){
 
 
 
-function logout(){
-	FB.logout(function(response){
-			setElements(false);
-	});
-}
+
 

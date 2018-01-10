@@ -20,12 +20,44 @@
 <script>
 console.log("HEADER");
 
+/*
+This part goes at the beginning because it need to load
+the library, generate the access_token(s)
+fetch the live data, etc...
+
+TODO.. 
+Maybe something less shitty
+*/
+window.fbAsyncInit = function() {
+  FB.init({
+    //appId      : '1721673437905271', //original
+    appId      : '1721673437905271', //La aplicación que cree con permiso de 
+    xfbml      : true,
+    status     : true,
+    cookie     : true,
+    version    : 'v2.11'
+  });
+  FB.getLoginStatus(function(response) {
+    
+    statusChangeCallback(response);
+    console.log(response);
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "https://connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+   //getInfo();
+}(document, 'script', 'facebook-jssdk'));
+
+
 function statusChangeCallback(response){
   if(response.status === 'connected'){
     console.log('logged in and authenticated');
-    document.getElementById('fb-btn').style.display = 'none'; //Trampilla, No jalá en la función setElements() en los Últimos posts creados
     setElements(true);
-    
     getInfo();
   }
   else{
@@ -39,29 +71,6 @@ function checkLoginState() {
     statusChangeCallback(response);
   });
 } 
-
-window.fbAsyncInit = function() {
-  FB.init({
-    //appId      : '1721673437905271', //original
-    appId      : '1721673437905271', //La aplicación que cree con permiso de 
-    cookie     : true,
-    xfbml      : true,
-    version    : 'v2.8'
-  });
-
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-    console.log(response);
-  });
-};
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
 </script>
 
