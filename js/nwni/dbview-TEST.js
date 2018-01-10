@@ -17,7 +17,7 @@ function ajaxCall() {
             var id_post = response;
             console.log(response);
 			var a = document.getElementById("feed"+id_post);
-			console.log("Automatic Post " + a);
+			console.log("Automatic Post " + id_post);
             //console.log(a);
             let closestTr = $(a).closest('tr');
             
@@ -31,6 +31,8 @@ function ajaxCall() {
             let link_img = closestTr.find('.clink_img').text().trim();
             //console.log(nombre_campana);
 			var message = descripcion + "\n" + hashtags;
+			//if(estado != null){
+				console.log("AUTOMATIC ESTADO! -> " + estado);
 				switch(tipo){
 					case 'photo':
 						postPhoto(message, link_img, id_post);
@@ -49,7 +51,8 @@ function ajaxCall() {
 					default:
 						console.log("JAJAJA nada");
 					break;
-				}
+				}				
+			//}
 		}
 	});
 }
