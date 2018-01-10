@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<script type="text/javascript" src="<?php echo base_url() ?>bower_components/jquery/jquery.min.js"></script>
 	<title>Calendario de eventos con bootstrap y php</title>
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>bower_components/bootstrap-calendar/css/calendar.css">
 	
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
