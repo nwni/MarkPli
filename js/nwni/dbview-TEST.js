@@ -16,7 +16,8 @@ function ajaxCall() {
 		success: function(response){
             var id_post = response;
             console.log(response);
-            var a = document.getElementById("feed"+id_post);
+			var a = document.getElementById("feed"+id_post);
+			console.log("Automatic Post " + a);
             //console.log(a);
             let closestTr = $(a).closest('tr');
             
@@ -29,35 +30,58 @@ function ajaxCall() {
             let hashtags = closestTr.find('.chashtags').text().trim();
             let link_img = closestTr.find('.clink_img').text().trim();
             //console.log(nombre_campana);
-            var message = descripcion + "\n" + hashtags;
-			switch(tipo){
-				case 'photo':
-                    postPhoto(message, link_img);
-                        console.log(message, link_img);
-				break;
-                case 'status':
-                    console.log("Estado");
-                    //console.log(message);
-                    postStatus(message);
-                        //console.log("Estado: " + nombre_campana + descripcion + hashtags);
-				break;
-				case 'video':
-                    postVideo(message, link_img);
-                    console.log(message, link_img);
-				break;
-				default:
-					console.log("JAJAJA nada");
-				break;
-			}
+			var message = descripcion + "\n" + hashtags;
+				switch(tipo){
+					case 'photo':
+						postPhoto(message, link_img, id_post);
+							console.log(message, link_img);
+					break;
+					case 'status':
+						console.log("Estado");
+						//console.log(message);
+						postStatus(message, id_post);
+							//console.log("Estado: " + nombre_campana + descripcion + hashtags);
+					break;
+					case 'video':
+						postVideo(message, link_img, id_post);
+						console.log(message, link_img);
+					break;
+					default:
+						console.log("JAJAJA nada");
+					break;
+				}
 		}
 	});
 }
 
 
 $('.bPost').on('click',  function(e){
+	var estado = document.getElementById('estado-post').innerHTML;
+	//alert("->>> " + estado);
+
+	switch (estado) {
+		case 'aceptado':
+		acceptedFunction();
+		break;
+		
+		case 'rechazado':
+		alert("Cambia el estado del post!");
+		break;
+
+		case 'pendiente':
+		alert("Cambia el estado del post!");
+		break;
+		
+		default:
+		alert("Invalid option");
+		break;
+	}
+});
+
+function acceptedFunction(){
 	var a = document.getElementById('id-post').innerHTML;
 	console.log("Manual Post " + a);
-	
+	var id_post = a;
 	let descripcion = document.getElementById('text-post').innerHTML;
 	let tipo = document.getElementById('tipo-post').innerHTML;
 	let estado = document.getElementById('estado-post').innerHTML;
@@ -70,28 +94,26 @@ $('.bPost').on('click',  function(e){
 		
 		case 'photo':
 		console.log("URL " + url_post);
-			postPhoto(message, url_post);
+			postPhoto(message, url_post, id_post);
 				console.log(message, url_post);
 		break;
 		case 'status':
 			console.log("Estado");
 			//console.log(message);
-			postStatus(message);
+			postStatus(message, id_post);
 				//console.log("Estado: " + nombre_campana + descripcion + hashtags);
 		break;
 		case 'video':
 		
 		console.log("URL " + url_post);
-			postVideo(message, url_post);
+			postVideo(message, url_post, id_post);
 			console.log(message, url_post);
 		break;
 		default:
 			console.log("JAJAJA nada");
 		break;
 	}
-});
-
-
+}
 
 
 //------------------------------------
@@ -290,7 +312,7 @@ function deletePost(id){
 	});	
 }
 
-function postStatus(message){
+function postStatus(message, id_post){
     //Uncomment the following to initialize the authResp
 	var authResp = FB.getAuthResponse();
 	if (authResp === null) {
@@ -323,8 +345,9 @@ function postStatus(message){
 					  //$('#exampleModal').modal('hide');
 					  
 					  alert("Posteado en Facebook! ");
-					  changePublicado();
-                      //console.log("ID-POST-> " + id_post);
+					  console.log("Status Manual ID-> " + id_post);
+					  changePublicado(id_post);
+                      
                       //location.reload(true);
                   }
               });
@@ -333,7 +356,7 @@ function postStatus(message){
   });
 }
 
-function postPhoto(message, link_img){
+function postPhoto(message, link_img, id_post){
 	//Uncomment the following to initialize the authResp
 	var authResp = FB.getAuthResponse();
 	if (authResp === null) {
@@ -367,9 +390,9 @@ function postPhoto(message, link_img){
 					  }else if (info.id != 'undefined') {
                         //$('#exampleModal').modal('hide');
 						alert("Posteado en Facebook! ");
-						changePublicado();
-                        console.log(id_post);
-                        //AQUI SUBIR LA IMAGEN
+						console.log("Photo Manual ID-> " + id_post);
+						changePublicado(id_post);
+                        //console.log(id_post);
                     }	      				
                 });
             }
@@ -377,7 +400,7 @@ function postPhoto(message, link_img){
     });     
 }
 
-function postVideo(message, link_img){
+function postVideo(message, link_img, id_post){
 	//Uncomment the following to initialize the authResp
 	var authResp = FB.getAuthResponse();
 	if (authResp === null) {
@@ -410,7 +433,8 @@ function postVideo(message, link_img){
 				  }else if (info.id != 'undefined') {
                       //$('#exampleModal').modal('hide');	
 					  alert("Posteado en Facebook! ");
-					  changePublicado();
+					  console.log("Video Manual ID-> " + id_post);
+					  changePublicado(id_post);
                       //console.log(id_post);
                   }      				
               });
@@ -420,8 +444,9 @@ function postVideo(message, link_img){
 }
 
 
-function changePublicado(){
-	var id_post = document.getElementById('id-post').innerHTML;
+function changePublicado(id_post){
+	console.log("SE CAMBIO EL ESTADO A ***PUBLICADO***");
+	//var id_post = document.getElementById('id-post').innerHTML;
 	console.log(baseUrl);
 	$.ajax({
 		type: 'POST',
