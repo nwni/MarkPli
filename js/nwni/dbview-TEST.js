@@ -66,6 +66,10 @@ $('.bPost').on('click',  function(e){
 		case 'aceptado':
 		acceptedFunction();
 		break;
+
+		case 'publicado':
+		acceptedFunction();
+		break;
 		
 		case 'rechazado':
 		alert("Cambia el estado del post!");
