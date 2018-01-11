@@ -4,6 +4,7 @@
 
 	<title>MarkPli</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="<?php echo base_url() ?>js/jquery.js"></script>
 
 </head>
@@ -15,6 +16,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample03">
+      <div class="container-fluid">
         <ul class="navbar-nav mr-auto">
          
           <li class="nav-item">
@@ -45,19 +47,16 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>red">Red</a>
           </li>
-
-        </ul>
-          <li>
-                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+          <li class="nav-item">
+          <a class="nav-link text-danger" href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-user-circle" aria-hidden="true"></i> Logout</a>  
           </li>
-       
+        </ul>     
    
-      </div>          
+      </div>    
+      </div>      
     </nav>
 
     <div class="container">
       <div class="row">
       </div>
-</head>
-<body>
   
