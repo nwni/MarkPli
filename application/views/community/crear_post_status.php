@@ -26,14 +26,14 @@
  <div class="col-xs-6" align="text-center" align="center">
         <div class="col-xs-12">
             <div class="form-group">
-              <label for="titulo">Contenido:</label><input type="text" class="form-control" name="descripcion" placeholder="Describe brevemente el proposito de este post">
+              <label for="titulo">Contenido:</label><input type="text" class="form-control" name="descripcion" placeholder="Describe brevemente el proposito de este post" required="">
             </div>
             <div class="form-group">
-              <label for="contenido" style="display:none">Contenido:</label><textarea style="display:none" name="contenido" id="desc" cols="48" rows="3" class="form-control" placeholder="arma tu publicacion"></textarea>
+              <label for="contenido" style="display:none">Contenido:</label><textarea style="display:none" name="contenido" id="desc" cols="48" rows="3" class="form-control" placeholder="arma tu publicacion" required=""></textarea>
             </div>
 
             <div class="form-group">
-              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="#ejemplo #otro" name="hashtags">
+              <label for="tags">Etiquetas:</label><input class="form-control" type="text" placeholder="#ejemplo #otro" name="hashtags" required="">
             </div>
 
              <div class="form-group">
@@ -41,7 +41,7 @@
                   <select class="form-control" required="" name="txtnombrecampana">
                             <?php foreach ($result->result() as $row) : ?>
 
-                            
+                               <option value="">Seleccione la campaña</option>
                             <option value="<?php echo $row->id_campana; ?>" > <?php echo $row->nombre_campana; ?> </option>
     
                              <?php endforeach; ?>
@@ -52,7 +52,7 @@
 
             <div class="form-group">
             <label for="tags">Tipo de Publicación</label>
-            <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control">
+            <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control" required="">
                 <option label="--- Menu ---"></label>
                 <option label="Platillos ---"></label>
                 <option value="1">Cortes</option>
@@ -82,7 +82,7 @@
                 <div class="form-group">
                     <label>Fecha para publicar</label>
                     <div class='input-group date' id='to'>
-                        <input type='text' name="to" class="form-control" readonly />
+                        <input type='text' name="to" class="form-control" readonly required="" />
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                     </div>
                 </div>

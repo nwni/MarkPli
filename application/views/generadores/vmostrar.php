@@ -52,11 +52,7 @@
 
 	        </td>
 	         <td>
- <form method="post" action="<?php echo site_url('CverContenido/ver/');?>">
-    <input type="hidden" name="id" value="<?php echo $row->id_contenido ?>">
 
-	<input type="submit" class="btn btn-danger" value="Eliminar"></input>   
-</form>
           <?php echo "<a href=".base_url()."CverContenido/ver/".$row->id_contenido.">Ver  </a>"?>
           
           
