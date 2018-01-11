@@ -62,11 +62,23 @@
 				<?php echo $row['estado']; ?>
 			</td>
 			<td>
-			<form method="post" name="form" id="form">
-					<input type="button" name="bForm" id="feed<?php echo $row['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary bForm" onclick='event.preventDefault();'></input>
-			</form>
-			
-			<button type="button" class="btn btn-danger btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row['id_post'];?>);" >Eliminar</button>
+
+			<div class="dropdown">
+				<div class="btn-group">
+					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-item">
+							<form method="post" name="form" id="form">
+							<input type="button" name="bForm" id="feed<?php echo $row['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary btn-sm bForm" onclick='event.preventDefault();'></input>
+							</form>
+						</li>
+						<li class="dropdown-item"><button type="button" class="btn btn-danger btn-sm btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row['id_post'];?>);" >Eliminar</button></li>
+					</ul>
+				</div>
+			</div>
+
 			</td>	
 		</tr>
 	<?php endforeach; ?>
@@ -117,12 +129,24 @@
 				<?php echo $row2['estado']; ?>
 			</td>
 			<td>
-			<form method="post" name="form" id="form">
-					<input type="button" name="bForm" id="feed<?php echo $row2['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary bForm" onclick='event.preventDefault();'></input>
-			</form>
-			
-			<button type="button" class="btn btn-danger btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row2['id_post'];?>);" >Eliminar</button>
-			</td>	
+
+			<div class="dropdown">
+				<div class="btn-group">
+					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-item">
+							<form method="post" name="form" id="form">
+							<input type="button" name="bForm" id="feed<?php echo $row2['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary btn-sm bForm" onclick='event.preventDefault();'></input>
+							</form>
+						</li>
+						<li class="dropdown-item"><button type="button" class="btn btn-danger btn-sm btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row2['id_post'];?>);" >Eliminar</button></li>
+					</ul>
+				</div>
+			</div>
+			</td>
+
 		</tr>
 	<?php endforeach; ?>
 	<?php }?>
@@ -138,15 +162,26 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="modal-body">
+      <div class="container modal-body" id="modal-body">
 
     </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger btn-Rechazar" name="btn-Rechazar" onclick='event.preventDefault();'>Rechazar</button>
-        <button type="button" class="btn btn-warning btn-Pausar" name="btn-Pausar" onclick='event.preventDefault();'>Pausar</button>               
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary btn-Aceptar" name="btn-Aceptar" onclick='event.preventDefault();'>Aceptar</button>        
-        <button type="button" class="btn btn-primary bPost" name="bPost" onclick='event.preventDefault();'>Upload!</button>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<button type="button" class="btn btn-danger btn-Rechazar" name="btn-Rechazar" onclick='event.preventDefault();'><i class="fa fa-thumbs-o-down" aria-hidden="true"></i></button>
+						<button type="button" class="btn btn-warning btn-Pausar" name="btn-Pausar" onclick='event.preventDefault();'><i class="fa fa-pause" aria-hidden="true"></i></button>               
+					</div>
+					<div class="col-md-4">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>			
+					</div>
+					<div class="col-md-3">
+						<button type="button" class="btn btn-primary btn-Aceptar" name="btn-Aceptar" onclick='event.preventDefault();'><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></button>
+						<button type="button" class="btn btn-success bPost" name="bPost" onclick='event.preventDefault();'><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>			
+					</div>
+					</div>			
+				</div>			
+			</div>
       </div>
     </div>
   </div>
