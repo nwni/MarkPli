@@ -157,7 +157,7 @@ function acceptedFunction(){
 			<video src="${link_img}" id="url-post" class="img-responsive" style="padding-left: 0px;  padding-right: 0px; width: 100%;" controls none></video>
 			
 			<div class="modalText">
-				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h3 style="display:none" class="nombre-contenido" id="title-post">${nombre_campana}</h3>
 				<h6 class="fecha">${fechaPublicar}</h6>				
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
@@ -174,7 +174,7 @@ function acceptedFunction(){
 			
 			<img src="${link_img}" id="url-post" alt="imagen" class="img-responsive" style="padding-left: 0px;  padding-right: 0px; width: 100%;>
 			<div class="modalText">
-				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h3 style="display:none" class="nombre-contenido" id="title-post">${nombre_campana}</h3>
 				<h6 class="fecha">${fechaPublicar}</h6>
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
@@ -190,11 +190,11 @@ function acceptedFunction(){
 		var modalBody = `
 			
 			<div class="modalText">
-				<h3 class="nombre-contenido" id="title-post">${nombre_contenido}</h3>
+				<h3 style="display:none" class="nombre-contenido" id="title-post">${nombre_campana}</h3>
 				<h6 class="fecha">${fechaPublicar}</h6>
 				<p class="texto" id="text-post">${descripcion}</p>
 				<p class="hashtags" id="hashtags-post">${hashtags}</p>
-				<p class="hashtags" id="hashtags-post">${tipo}</p>
+				<p style="display:none" class="hashtags" id="hashtags-post">${tipo}</p>
 				<span style="display:none" id="tipo-post">${tipo}</span>
 				<span style="display:none" id="id-post">${id_post}</span>
 				<span style="display:none" id="estado-post">${estado}</span>

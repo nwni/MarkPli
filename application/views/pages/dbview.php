@@ -8,12 +8,16 @@
 </style> -->
 
  <!-- Variable Global para obtener el URL actual -->
-<script>var baseUrl = '<?php echo base_url() ?>';</script> 
+<script>var baseUrl = '<?php echo base_url() ?>';</script>
+<br>
+<h1>Publicaciones Multimedia</h1>
+<br>
+<br>
 <!-- <table class="table table-bordered table-hover" align="center" > -->
 <table class="table table-hover">
 	<thead>
 		<tr>
-		  <th>No. de post</th>
+		  <th>#</th>
 		  <th>Campaña</th>		  
 		  <th>Titulo</th>
 		  <th>Descripcion</th>
@@ -64,7 +68,6 @@
 			<td>
 
 			<div class="dropdown">
-				<div class="btn-group">
 					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fa fa-cogs" aria-hidden="true"></i>
 					</button>
@@ -74,9 +77,9 @@
 							<input type="button" name="bForm" id="feed<?php echo $row['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary btn-sm bForm" onclick='event.preventDefault();'></input>
 							</form>
 						</li>
+						<div class="dropdown-divider"></div>
 						<li class="dropdown-item"><button type="button" class="btn btn-danger btn-sm btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row['id_post'];?>);" >Eliminar</button></li>
 					</ul>
-				</div>
 			</div>
 
 			</td>	
@@ -88,11 +91,14 @@
 
 <!-- tabla para estados
  -->
- <h1>Posts de estados</h1>
+ <br>
+ <br>
+ <br>
+ <h1>Publicaciones de estados</h1>
  <table class="table table-hover">
 	<thead>
 		<tr>
-		  <th>No. de post</th>
+		  <th>#</th>
 		  <th>Campaña</th>		  
 		  <th>Descripcion</th>
 		  <th>Hashtags</th>
@@ -141,6 +147,7 @@
 							<input type="button" name="bForm" id="feed<?php echo $row2['id_post'];?>"  data-target="#exampleModal" value="Preview" class="btn btn-primary btn-sm bForm" onclick='event.preventDefault();'></input>
 							</form>
 						</li>
+						<div class="dropdown-divider"></div>
 						<li class="dropdown-item"><button type="button" class="btn btn-danger btn-sm btn-Eliminar" name="btn-Eliminar" onclick="deletePost(<?php echo $row2['id_post'];?>);" >Eliminar</button></li>
 					</ul>
 				</div>
