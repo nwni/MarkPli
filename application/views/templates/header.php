@@ -89,7 +89,7 @@ window.fbAsyncInit = function() {
             <a class="nav-link" href="<?php echo base_url(); ?>tipo_post">Crear Publicacion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>posts">Ultimos posts creados</a>
+            <a class="nav-link" href="<?php echo base_url(); ?>posts">Ultimos posts</a>
           </li>                              
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>validacion">Dashboard</a>
@@ -102,7 +102,7 @@ window.fbAsyncInit = function() {
           </li>
 
                  <li>
-                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+                    <a href="<?php echo base_url() ?>Clogin/logout">Logout</a>
                 </li>
         </ul>
 

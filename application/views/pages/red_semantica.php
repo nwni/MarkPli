@@ -1,6 +1,6 @@
 <script>var baseUrl = '<?php echo base_url() ?>';</script> 
 <h2>Red Semántica</h2>
-<table class="table table-bordered" align="center" >
+<table class="table table-hover" align="center" >
 	<thead>
 		<tr>
 		  <th>Menú</th>

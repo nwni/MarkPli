@@ -31,7 +31,7 @@
             </ul>
             </ul>
             <li>
-              <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+              <a href="<?php echo base_url() ?>Clogin/logout">Logout</a>
             </li>
       </div>          
     </nav>
