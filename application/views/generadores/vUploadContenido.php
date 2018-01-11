@@ -18,7 +18,8 @@
  <body>
  
  <div class="container" align="center">
- 		<h1>Subir contenido</h1>
+ 	<br>
+ 		<h2>Subir contenido</h2>
 
  	
 
@@ -35,9 +36,10 @@
  				 	<label class="col-lg-4" for="nombre">Nombre de la campaña</label>
  				 	<div class="col-lg-8">
  				 		<select class="form-control" required="" name="txtnombrecampana">
+
  				 			<?php foreach ($result->result() as $row) : ?>
 
- 				 	        
+ 				 	        	<option value="">Seleccione la campaña</option>
  				 	        <option value="<?php echo $row->id_campana; ?>" > <?php echo $row->nombre_campana; ?> </option>
  	
  				 	   		 <?php endforeach; ?>
@@ -50,6 +52,8 @@
  				 	<label class="col-lg-4" for="nombre">Selecciona el tipo de contenido</label>
  				 	<div class="col-lg-8">
  				 		<select class="form-control" required="" name="tipo">
+ 	 				 	     <option value="">Seleccione el tipo</option>
+
  				 			<option value="photo">Imagen</option>
   							<option value="video">Video</option>
  					
@@ -66,20 +70,25 @@
  			  </div>
 
 				 <div class="form-group">
-				 	<label for="file_id" class="col-lg-4 control-label">Espera a que se genere el enlace para subir el contenido!</label>
+				 	<label  for="file_id" class="col-lg-4 control-label">Espera a que se genere el enlace para subir el contenido!</label>
 				 	<div class="col-lg-8">
-				 		<input type="text" class="form-control" name="userfile" id="userfile" readonly> 
+				 		<input  type="text" class="form-control" name="userfile" id="userfile" readonly> 
 					 </div>
  			  </div>
  			
 
-
- 			  <div class="form-group">
- 			    <div class=" col-lg-12">
- 			      <button type="submit" class="btn btn-default">Subir contenido</button>
+ 			  <div class="row" >
+ 			  	
+ 			    <div class=" col-lg-7">
+ 			      <button type="submit" class="btn btn-success">Subir contenido</button>
  			    </div>
+				
+
+				 <div class=" col-lg-2">
+				 	 		<a class="btn btn-primary" href="<?php echo base_url();?>cmostrar">Mostrar contenido</a>
+
 				 </div>
-				 
+			</div>	 
 		 
 <!-- 
  			    <div class="form-group">
@@ -90,7 +99,7 @@
  			</form>
  	
  	
- 		<a href="<?php echo base_url();?>cmostrar">Mostrar contenido</a>
+
 
  </div>
 

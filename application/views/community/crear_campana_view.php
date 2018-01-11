@@ -22,6 +22,7 @@
  <div class="container" align="center">
 
 	<h1>Nueva Campaña</h1> 
+    <br>
  		<form class="form-horizontal"  method="POST"  action="<?php echo base_url();?>Campanas/GuardarCampana/">
 
  			  <div class="form-group">
@@ -68,7 +69,7 @@
           
  			  <div class="form-group">
  			    <div class=" col-lg-12">
- 			      <button type="submit" class="btn btn-default">Crear Campaña</button>
+ 			      <button type="submit" class="btn btn-success ">Crear Campaña</button>
  			    </div>
  			  </div>
 

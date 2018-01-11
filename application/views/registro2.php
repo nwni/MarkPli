@@ -2,7 +2,8 @@
 
  <div id="inicio" class="container">
  	<br>
- 	<center><h1>Registro de Usuarios</h1></center>
+ 	<center><h2>Registro de Usuarios</h2></center>
+ 	<br>
  		<div class "row" >
  				<form method="POST"  action="<?php echo site_url('usuario/RegistroUsu');?>" role="form">
 					
@@ -32,9 +33,15 @@
 							 </div>
 							 <br>
 						
-						
-				 		<button class="btn btn-primary btn-registrar" type="summit" name="btn-registrar" >Registrar</button>
+				<div class="row">
+					<div class="col-md-2">
+
+				 		<button class="btn btn-success btn-registrar" type="summit" name="btn-registrar" >Registrar</button>
+				 			 </div>
+				 		<div class="col-md-2">
 				 <a href="index.php/usuario/mostrar" class="btn btn-primary">Mostrar Usuarios Registrados</a>
+				 	 </div>
+				  </div>
  			</form>
  	
  	</div>

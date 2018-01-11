@@ -1,7 +1,9 @@
 <div class="container">
-  <h2>Campañas publicitarias vigentes</h2>
+<br>
+<h2 align="center">Campañas Publicitarias </h2>
+<br>
 </div>
-<table class="table table-bordered campana-table" align="center">
+<table class="table table-hover campana-table" align="center">
     <thead>
       <tr>
         <th>Numero de Campaña</th>
@@ -11,7 +13,8 @@
         <th>Fecha Inicio</th>
         <th>Fecha Final</th>
  
-        <th>Acciones</th>
+        <th>Modificar</th>
+        <th>Eliminar</th>
       </tr>
     </thead>
 
@@ -40,17 +43,22 @@
       </td>
      
       <td>
-        <?php echo "<a href=".base_url()."Campanas/Eliminar/".$row->id_campana.">Eliminar | </a>"?>
-        <?php echo "<a href=".base_url()."Campanas/editar/".$row->id_campana.">Modificar</a>"?>
-<!--         <?php echo "<a href=".base_url()."contenidos/>Modificar</a>"?>
- -->      </td>
+      
+        <?php echo "<a  href=".base_url()."Campanas/Eliminar/".$row->id_campana.">Eliminar </a>"?>
+       
+    </td>
+ <td>
+
+
+ <?php echo "<a href=".base_url()."Campanas/editar/".$row->id_campana.">Modificar</a>"?>
+ </td>
     </tr>
   <?php endforeach; ?>
   <?php }?>
   </table>
 
-   
+
   
-    <a href="<?php echo base_url(); ?>Campanas/NuevaCampana">Nueva Campaña</a>   
+    <a class="btn btn-success" href="<?php echo base_url(); ?>Campanas/NuevaCampana">Nueva Campaña</a>   
    
    

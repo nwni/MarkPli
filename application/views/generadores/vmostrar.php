@@ -7,17 +7,17 @@
 </head>
 <body>
 	 <div class="container" align="center">
-	 	<h1>CONTENIDO SUBIDO</h1>
- 
 	 	<br>
+	 	<h2>Contenido Generado</h2>
 	 	<br>
-	  <table class="table table-bordered" align="center">
+	<table class="table table-hover">
 	    <thead>
 	        <tr>
 	          <th>Nombre del contenido</th>
 	          <th>Contenido</th>
 	          <th>Nombre de la campaña</th>
-	          <th>Accion</th>
+	          <th>Ver</th>
+	          <th>Eliminar</th>
 	        
 	      
 	        </tr>
@@ -52,14 +52,20 @@
 
 	        </td>
 	         <td>
-          <?php echo "<a href=".base_url()."CverContenido/ver/".$row->id_contenido.">Ver | </a>"?>
-            <?php echo "<a href=".base_url()."CEliminarContenido/eliminar/".$row->id_contenido.">Eliminar</a>"?>
+ <form method="post" action="<?php echo site_url('CverContenido/ver/');?>">
+    <input type="hidden" name="id" value="<?php echo $row->id_contenido ?>">
 
-
-
+	<input type="submit" class="btn btn-danger" value="Eliminar"></input>   
+</form>
+          <?php echo "<a href=".base_url()."CverContenido/ver/".$row->id_contenido.">Ver  </a>"?>
+          
           
         </td>
-	   
+	   <td>
+	   	
+	   	  <?php echo "<a href=".base_url()."CEliminarContenido/eliminar/".$row->id_contenido.">Eliminar</a>"?>
+
+	   </td>
 	      
 
 	    
