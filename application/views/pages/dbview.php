@@ -1,13 +1,16 @@
 
 
-<style>
+<!-- 
+	Table style
+	<style>
    table {border-collapse:collapse; table-layout:fixed; width:310px;}
    table td {border:solid 1px #fab; width:100px; word-wrap:break-word;}
-</style>
+</style> -->
 
  <!-- Variable Global para obtener el URL actual -->
 <script>var baseUrl = '<?php echo base_url() ?>';</script> 
-<table class="table table-bordered" align="center" >
+<!-- <table class="table table-bordered table-hover" align="center" > -->
+<table class="table table-hover">
 	<thead>
 		<tr>
 		  <th>No. de post</th>
@@ -74,7 +77,7 @@
 <!-- tabla para estados
  -->
  <h1>Posts de estados</h1>
- <table class="table table-bordered" align="center" >
+ <table class="table table-hover">
 	<thead>
 		<tr>
 		  <th>No. de post</th>
