@@ -45,30 +45,42 @@
             <br>
             <div class="form-group">
             <label for="tags">Tipo de Publicación</label>
-            <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control">
-                <option label="--- Menu ---"></label>
-                <option label="Platillos ---"></label>
+            <select name="txtTipoPublicacion" id="tipoPublicacion" class="form-control" required="">
+                
+                <optgroup label="Platillos">
                 <option value="1">Cortes</option>
                 <option value="1">Ensaldas</option>
                 <option value="1">Infantil</option>
-                <option label="Bebidas ---"></label>
+                </optgroup>
+                <optgroup label="Bebidas">
                 <option value="1">Con Alcohol</option>
                 <option value="1">Sin Alcohol</option>
+                </optgroup>
+                <optgroup label="Mas del menú">
                 <option value="1">Postres</option>
                 <option value="1">Recomendaciones</option>
-                <option label="--- Social Media Engagement ---"></label>
+                </optgroup>
+
+                <optgroup label="Social Media Engagement">
                 <option value="2">Promociones Exclusivas</option>
                 <option value="2">Encuestas</option>
                 <option value="2">Reseñas</option>
-                <option label="--- Consejos ---"></label>
+                </optgroup>
+
+                <optgroup label="Consejos">
                 <option value="3">Recetas</option>
                 <option value="3">Salud</option>
-                <option label="--- Días Festivos ---"></label>
+                </optgroup>
+
+                <optgroup label="Días Festivos">
                 <option value="4">Sucesos Importantes</option>
                 <option value="4">Menciones Honorificas</option>
-                <option label="--- Trabajadores ---"></label>
+                </optgroup>
+                
+                <optgroup label="Trabajadores">
                 <option value="5">Behind the Scenes</option>
                 <option value="5">Interacción con el Staff</option>
+                </optgroup>
             </select>
         </div
                 <div class="form-group">
