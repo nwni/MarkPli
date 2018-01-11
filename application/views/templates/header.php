@@ -10,6 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js" integrity="sha256-t3+U9BqykoMN9cqZmJ5Z53TvPv4V7S9AmjUcIWNNyxo=" crossorigin="anonymous"></script>
 <script src="<?php echo base_url() ?>js/nwni/moment.js"></script>
 <script src="<?php echo base_url() ?>js/nwni/moment-timezone.js"></script>
+
 <!-- <script type="text/javascript" src="js/nwni/syncCall.js"></script> -->
 <!-- <script language="javascript" src="js/nwni/dbview-TEST.js"></script> -->
 <script type="text/javascript" src="js/nwni/lib.js"></script>
