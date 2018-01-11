@@ -12,6 +12,7 @@ class Celiminarcontenido extends CI_controller
 		//$this->load->database();
 		$this->load->model('MEliminarContenido');
 		  $this->load->model('Mlista');
+		  $this->load->model('mmostrar');
 		
 	}
 
@@ -22,13 +23,13 @@ class Celiminarcontenido extends CI_controller
 		$this->MEliminarContenido->eliminar($id);
 
 	
-          $result=$this->Mlista->listaC();
-
-        $data= array('result'=>$result);
+         $result=$this->db->get('contenidos');
+		$data=array('consulta'=>$result);
         
-        			       $this->load->view('core/header');
-      $this->load->view('generadores/vUploadContenido',$data);
-    $this->load->view('core/footer');
+
+$this->load->view('core/header');
+$this->load->view('generadores/vmostrar',$data);
+$this->load->view('core/footer');
   
 	}
 

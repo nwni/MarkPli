@@ -18,10 +18,14 @@
         <ul class="navbar-nav mr-auto">
          
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>Usuario">Gestionar Usuarios</a>
+            <a class="nav-link"   href="<?php echo base_url(); ?>Usuario">Gestionar Usuarios
+          
+            </a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>campanas">Gestionar Campañas</a>
+            <a class="nav-link" href="<?php echo base_url(); ?>campanas">Gestionar Campañas
+
+            </a>
           </li> 
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>Cupload">Gestionar Contenido</a>
@@ -43,9 +47,11 @@
           </li>
 
         </ul>
-                        <li>
-                    <a href="<?php echo base_url() ?>Clogin/logout">Logout</a>
-                </li>
+          <li>
+                    <a href="<?php echo base_url() ?>Clogin/logout"><i class="fa fa-fw fa-power-off"></i> Logout</a>
+          </li>
+       
+   
       </div>          
     </nav>
 

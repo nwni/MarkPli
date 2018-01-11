@@ -69,12 +69,11 @@ class Cupload extends CI_Controller {
     
     //mostrar la vista correcta
   
-    $result=$this->Mlista->listaC();
-  
-    $data= array('result'=>$result);
+     $result=$this->db->get('contenidos');
+    $data=array('consulta'=>$result);
     
     $this->load->view('core/header');
-    $this->load->view('generadores/vUploadContenido',$data);
+    $this->load->view('generadores/vmostrar',$data);
     $this->load->view('core/footer');
   }
 }  
