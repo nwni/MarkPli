@@ -38,7 +38,7 @@
 </div>
 
 <br>
-<button type="button" class="btn btn-primary btn-Aceptar" name="btn-Stats" onclick='event.preventDefault();createStats();'>Load Stats</button>        
+<button type="button" class="btn btn-primary btn-Aceptar" name="btn-Stats" onclick='event.preventDefault();createStats();'>Load Stats</button>
 <br>
 
 <div class="row">
