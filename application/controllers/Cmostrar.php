@@ -9,6 +9,7 @@ class cmostrar extends CI_controller
 		parent::__construct();
 		$this->load->helper(array( 'url'));
 		$this->load->database();
+		 session_start();
 		//$this->load->database();
 
 	//	$this->load->model('mmostrar');
@@ -19,14 +20,37 @@ class cmostrar extends CI_controller
 
 	public function index(){
 
-		$result=$this->db->get('contenidos');
-		$data=array('consulta'=>$result);
-		 $this->load->view('core/header');
-    
-		$this->load->view('generadores/vmostrar',$data);
-    $this->load->view('core/footer');
+	$result=$this->db->get('contenidos');
+	$data=array('consulta'=>$result);
 
+
+
+
+	$tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
+    $this->load->view('core/header');
+    $this->load->view('generadores/vmostrar',$data);
+    $this->load->view('core/footer');
+    }else
+    {
+    	if ($tipo=='3') {
+    			$this->load->view('core/header_uplo');
+  				$this->load->view('generadores/vmostrar',$data);
+  			    $this->load->view('core/footer');
+    		}
+    		else{
+
+  		$this->load->view('ingresar');
+
+
+    		}
+    
+		
 	}
+}
+
 
 
 

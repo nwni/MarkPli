@@ -13,12 +13,13 @@ class Cupload extends CI_Controller {
     $this->load->database();
       $this->load->model('mupload');
           $this->load->model('Mlista');
+           session_start();
 
 
   }
 
   public function index(){
-session_start();
+
   $tipo = $this->session->userdata('tipos_usuarios');
 
   if ($tipo=='1') {
@@ -30,25 +31,24 @@ session_start();
     $this->load->view('core/footer');
       }else
   {
-    if ($tipo=='2') {
-      
-    }else{
-      if ($tipo=='3') {
-    $result=$this->Mlista->listaC();
+    if ($tipo=='3') {
+      $result=$this->Mlista->listaC();
     $data= array('result'=>$result);    
     $this->load->view('core/header_uplo');
     $this->load->view('generadores/vUploadContenido',$data);
     $this->load->view('core/footer');
-      }
-      else{
+      
+    }else{
         $this->load->view('ingresar');
+    
       }
+     
 
     }
   }
       
   
-  }
+  
   public function do_upload()
   {
     //Se carga el modelo para subir el contenido a la base de datos

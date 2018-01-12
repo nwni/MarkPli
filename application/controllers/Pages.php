@@ -6,10 +6,11 @@
 		$this->load->helper('url');
 		$this->load->database();
 		$this->load->model('post_model');
+		     session_start();
 	}
 
 		public function view($page = 'home'){
-			session_start();
+			
 			if(!file_exists(APPPATH . 'views/pages/' . $page . '.php')){
 				show_404();
 			}
@@ -53,7 +54,6 @@
 }
 	//This method handles the posts request without parameters
 		public function showPosts() {
-session_start();
 			$data = array();
 
             $data['records'] = $this->post_model->getRows();

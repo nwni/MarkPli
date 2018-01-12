@@ -12,17 +12,19 @@ class Clogin extends CI_controller
 		$this->load->database();
 		  $this->load->model('mupload');
           $this->load->model('Mlista');
-       
+          session_start();
+          //  $this->session->sess_destroy();
+        
+         
+     
           }
 	
 
 	public function index()
 	{
-		
-				//	$this->load->view('core/header');
-            //$this->load->view('community/community_view');
+
     $this->load->view('ingresar');
-    //$this->load->view('core/footer');
+   
 	}
 
 	public function Salir(){
@@ -83,6 +85,7 @@ class Clogin extends CI_controller
 
 
 	function valida(){
+      
 		$this->load->model('Mlogin');
         $nick_usuario = $this->input->post('IngresarU');
         $contrasena_usuario = ($this->input->post('ConstraseaIngreU'));
@@ -93,9 +96,9 @@ class Clogin extends CI_controller
 
         	$this->load->view('ingresar');
 
-            $this->session->set_userdata('id_usuario',$res[0]->id_usuario);
-            $this->session->set_userdata('tipo_usuario_nombre',$res[0]->tipo_usuario_nombre);
-            $this->session->set_userdata('tipos_usuarios',$res[0]->tipos_usuarios);
+           // $this->session->set_userdata('id_usuario',$res[0]->id_usuario);
+           // $this->session->set_userdata('tipo_usuario_nombre',$res[0]->tipo_usuario_nombre);
+            //$this->session->set_userdata('tipos_usuarios',$res[0]->tipos_usuarios);
 
 
         }
@@ -135,7 +138,9 @@ class Clogin extends CI_controller
         	
         				
         			}else{
-        				redirect('Clogin');
+                        $this->load->view('Clogin');
+            
+        			
 
         			}        			
         		}

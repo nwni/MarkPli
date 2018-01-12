@@ -9,10 +9,11 @@ class Campanas extends CI_Controller {
     $this->load->helper('url_helper');
     $this->load->helper('url');
     $this->load->database();
+    session_start();
   }
 
   public function index(){
-session_start();
+
 $tipo = $this->session->userdata('tipos_usuarios');
 
   if ($tipo=='1') {

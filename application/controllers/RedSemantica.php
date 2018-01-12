@@ -7,9 +7,10 @@ class RedSemantica extends CI_Controller
 		$this->load->helper('url');
 		$this->load->database();
 		$this->load->model('Red_model');
+         session_start();
 	}
     public function red(){
-      session_start();
+ 
         $data = array();
         $tipo = $this->session->userdata('tipos_usuarios');
         $data['records'] = $this->Red_model->getTypes();

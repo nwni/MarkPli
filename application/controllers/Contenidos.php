@@ -8,6 +8,7 @@ class Contenidos extends CI_Controller {
     $this->load->helper('url_helper');
     $this->load->helper('form');
     $this->load->model('Mlista');
+     session_start();
   }
 
 
