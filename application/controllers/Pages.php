@@ -9,16 +9,35 @@
 	}
 
 		public function view($page = 'home'){
+			session_start();
 			if(!file_exists(APPPATH . 'views/pages/' . $page . '.php')){
 				show_404();
 			}
 
 			$data['title'] = ucfirst($page);
+
+
+			          $tipo = $this->session->userdata('tipos_usuarios');
+
+			if ($tipo=='1') {
+			
 			$this->load->view('templates/header');
 			$this->load->view('pages/' . $page);
 			$this->load->view('templates/footer');
+			  }else
+			  {
+			
+			      
+			        $this->load->view('ingresar');
+			     	} 
 
-		}
+			   		
+
+			// $this->load->view('templates/header');
+			// $this->load->view('pages/' . $page);
+			// $this->load->view('templates/footer');
+
+	
 
 		// public function showDB($id) {
 		// 	$query = $this->db->get('posts');
@@ -31,10 +50,10 @@
 		// }
 
 
-
+}
 	//This method handles the posts request without parameters
 		public function showPosts() {
-
+session_start();
 			$data = array();
 
             $data['records'] = $this->post_model->getRows();
@@ -43,9 +62,31 @@
             //load the details page view
             //print_r($data);
 
+
+            $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+  
             $this->load->view('templates/header');
             $this->load->view('pages/dbview', $data);
             $this->load->view('templates/footer');
+    }else
+    {
+      if ($tipo=='2') {
+
+        $this->load->view('templates/header');
+            $this->load->view('pages/dbview', $data);
+            $this->load->view('templates/footer');
+      }else{
+        
+          $this->load->view('ingresar');
+        }
+
+      }
+
+            // $this->load->view('templates/header');
+            // $this->load->view('pages/dbview', $data);
+            // $this->load->view('templates/footer');
 
             //return print json_encode($data);
 		}

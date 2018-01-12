@@ -124,7 +124,7 @@
 			<td class="chashtags" name="hashtags">
 				<?php echo $row2['hashtags']; ?>
 			</td>
-			<td class="ctipo" name="tipo">
+			<td class="ctipo" name="tipo" style="display:none">
 				<?php echo $row2['tipo']; ?>
 			</td>
 			<td class="cfechaPublicar" name="fecha_publicar">

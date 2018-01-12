@@ -4,7 +4,11 @@ class Calendar extends CI_Controller
 {
 
 	public function index()
-	{    $tipo = $this->session->userdata('tipos_usuarios');
+
+	{    
+			session_start();
+		$tipo = $this->session->userdata('tipos_usuarios');
+
 
 	if ($tipo=='1') {
 		$this->load->view('core/header');
@@ -18,9 +22,7 @@ class Calendar extends CI_Controller
 		$this->load->view('calendar');
     	$this->load->view('core/footer');
 		}else{
-			if ($tipo=='3') {
-				
-			}
+			 $this->load->view('ingresar');
 
 		}
 	}

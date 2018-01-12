@@ -8,7 +8,7 @@ public function __construct(){
   }
   public function index()
   {
-
+session_start();
 	$tipo = $this->session->userdata('tipos_usuarios');
 
 	if ($tipo=='1') {
@@ -22,12 +22,7 @@ public function __construct(){
     $this->load->view('community/tipos_de_post');
     $this->load->view('core/footer');
 		}else{
-			if ($tipo=='3') {
-						$this->load->view('core/header_uplo');
-    $this->load->view('community/community_view');
-    $this->load->view('core/footer');
-			}
-
+		$this->load->view('ingresar');
 		}
 	}
                 }
