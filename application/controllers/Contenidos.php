@@ -28,10 +28,7 @@ class Contenidos extends CI_Controller {
     $this->load->view('community/contenidos_pub_view', $data);
     $this->load->view('core/footer');
     }else{
-      if ($tipo=='3') {
-        
-      }
-
+      
     }
   }
 
@@ -59,13 +56,9 @@ class Contenidos extends CI_Controller {
     $this->load->view('core/footer');
   }
 
-public function crearPostMul($idcon = 0, $idcom = 0){
-    $data['contenidos'] = $this->contenidos_model->get_contenidos();
-    $this->posts_model->set_post($idcon, $idcom);
-    $this->load->view('core/header');
-    $this->load->view('calendar');
-    $this->load->view('core/footer');
-  }
+
+
+
  public function crearPostEstado(){
 
      $result=$this->Mlista->listaC();
@@ -99,27 +92,129 @@ public function crearPostMul($idcon = 0, $idcom = 0){
     //$this->load->view('core/footer');
   }
 
-  public function mostrarContenidoMul(){
-    $data['contenidos'] = $this->contenidos_model->get_contenidos();
-    $this->load->view('core/header');
-    $this->load->view('community/mostra_contenido_multimedia2', $data);
-    $this->load->view('core/footer');
-  }
 
-
+//MOSTRAR CONTENIDO AGENDA
   public function mostrarContenidoMul2(){
-    $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    // $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    // $this->load->view('core/header');
+    // $this->load->view('community/mostra_contenido_multimedia', $data);
+    // $this->load->view('core/footer');
+
+
+        $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    // $this->load->view('core/header');
+    // $this->load->view('community/mostra_contenido_multimedia2 ', $data);
+    // $this->load->view('core/footer');
+
+
+          $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
     $this->load->view('core/header');
-    $this->load->view('community/mostra_contenido_multimedia', $data);
+  $this->load->view('community/mostra_contenido_multimedia', $data);
     $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='2') {
+ 
+    $this->load->view('core/header_cm');
+  $this->load->view('community/mostra_contenido_multimedia', $data);
+    $this->load->view('core/footer');
+    }else{
+      
+    }
   }
 
-    public function crearEstado(){
-   // $data['contenidos'] = $this->contenidos_model->get_contenidos();
-    $this->posts_model->set_postES($idcon=null, $idcom=null);
+
+  }
+
+
+  public function crearPostMul($idcon = 0, $idcom = 0){
+    $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    $this->posts_model->set_post($idcon, $idcom);
+
+          $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
     $this->load->view('core/header');
-    $this->load->view('calendar');
+    $this->load->view('community/tipos_de_post');
     $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='2') {
+ 
+    $this->load->view('core/header_cm');
+    $this->load->view('community/tipos_de_post');
+    $this->load->view('core/footer');
+    }else{
+      
+    }
+  }
+
+  }
+
+// USUARIO CM MOSTRAR CONTENIDO
+    public function mostrarContenidoMul(){
+    $data['contenidos'] = $this->contenidos_model->get_contenidos();
+    // $this->load->view('core/header');
+    // $this->load->view('community/mostra_contenido_multimedia2 ', $data);
+    // $this->load->view('core/footer');
+
+
+          $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
+    $this->load->view('core/header');
+  $this->load->view('community/mostra_contenido_multimedia2', $data);
+    $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='2') {
+ 
+    $this->load->view('core/header_cm');
+  $this->load->view('community/mostra_contenido_multimedia2', $data);
+    $this->load->view('core/footer');
+    }else{
+      
+    }
+  }
+
+
+  }
+
+//CM CRERAR ESTADO
+    public function crearEstado(){
+  $this->posts_model->set_postES($idcon=null, $idcom=null);
+
+          $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
+    $this->load->view('core/header');
+    $this->load->view('community/tipos_de_post');
+    $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='2') {
+ 
+    $this->load->view('core/header_cm');
+    $this->load->view('community/tipos_de_post');
+    $this->load->view('core/footer');
+    }else{
+      
+    }
+  }
+
+
+
+   // // $data['contenidos'] = $this->contenidos_model->get_contenidos();
+   //  $this->posts_model->set_postES($idcon=null, $idcom=null);
+   //  $this->load->view('core/header');
+   //  $this->load->view('calendar');
+   //  $this->load->view('core/footer');
   }
 
 }

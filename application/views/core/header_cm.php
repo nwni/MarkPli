@@ -23,7 +23,7 @@
           </li> 
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url(); ?>Contenidos">Crear Publicacion</a>
+            <a class="nav-link" href="<?php echo base_url(); ?>tipo_post">Crear Publicacion</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(); ?>calendar">Agendar Publicaciones</a>

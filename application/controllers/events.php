@@ -2,12 +2,33 @@
 
 class Events extends CI_Controller {
 
+	  public function __construct(){
+	  	  parent::__construct();
+     session_start();
+  }
+
 	public function index()
 	{
-		$this->load->view('core/header');
-		$this->load->view("community/tipos_de_post2");
-    	$this->load->view('core/footer');
-		
+
+    $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+ 
+    $this->load->view('core/header');
+  $this->load->view("community/tipos_de_post2");
+    $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='2') {
+  
+    $this->load->view('core/header_cm');
+  $this->load->view("community/tipos_de_post2");
+    $this->load->view('core/footer');
+    }else{
+      
+    }
+  }
+
 	}
 
 	public function save()

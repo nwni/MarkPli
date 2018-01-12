@@ -35,7 +35,13 @@ class Cvercontenido extends CI_controller
 		    $this->load->view('core/footer');
 		    }else
 		    {
-		    	if ($tipo=='3') {
+		    	if ($tipo=='2') {
+		    			$this->load->view('core/header_cm');
+		  				$this->load->view('generadores/vVer',$data);
+		  			    $this->load->view('core/footer');
+		    	
+		    	}else{
+		    			if ($tipo=='3') {
 		    			$this->load->view('core/header_uplo');
 		  				$this->load->view('generadores/vVer',$data);
 		  			    $this->load->view('core/footer');
@@ -46,6 +52,10 @@ class Cvercontenido extends CI_controller
 
 
 		    		}
+
+
+		    	}
+		    	
 		    
 				
 			}

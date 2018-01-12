@@ -59,7 +59,7 @@ $tipo = $this->session->userdata('tipos_usuarios');
     $datos['objetivos']=$this->input->post('txtobjetivos');
     $datos['fecha_inicio']=$_POST['from']; 
     $datos['fecha_final']=$_POST['to']; 
-    $datos['fid_cliente']=$res[0]->id_cliente;
+    //$datos['fid_cliente']=$res[0]->id_cliente;
     
       $this->campanas_model->guardar_campana($datos);
 
@@ -67,9 +67,32 @@ $tipo = $this->session->userdata('tipos_usuarios');
   $result=$this->db->get('campanas');
     $data=array('consulta'=>$result);
 
+
+$tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+    
     $this->load->view('core/header');
-    $this->load->view('community/campanas_view',$data );
+    $this->load->view('community/campanas_view',$data);
     $this->load->view('core/footer');
+    }else
+    {
+      if ($tipo=='2') {
+  
+    $this->load->view('core/header_cm');
+    $this->load->view('community/campanas_view',$data);
+    $this->load->view('core/footer');
+      }else{
+        
+          $this->load->view('ingresar');
+        }
+
+      }
+
+
+    // $this->load->view('core/header');
+    // $this->load->view('community/campanas_view',$data );
+    // $this->load->view('core/footer');
   }
   public function NuevaCampana(){
     $this->load->model('consultas');
@@ -91,10 +114,27 @@ $tipo = $this->session->userdata('tipos_usuarios');
 
     $result=$this->db->get('campanas');
     $data=array('consulta'=>$result);    
+    
+$tipo = $this->session->userdata('tipos_usuarios');
 
+  if ($tipo=='1') {
+    
     $this->load->view('core/header');
     $this->load->view('community/campanas_view',$data);
     $this->load->view('core/footer');
+    }else
+    {
+      if ($tipo=='2') {
+  
+    $this->load->view('core/header_cm');
+    $this->load->view('community/campanas_view',$data);
+    $this->load->view('core/footer');
+      }else{
+        
+          $this->load->view('ingresar');
+        }
+
+      }
   
   }
 
@@ -161,9 +201,26 @@ $tipo = $this->session->userdata('tipos_usuarios');
     $result=$this->db->get('campanas');
     $data=array('consulta'=>$result);    
 
+$tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+    
     $this->load->view('core/header');
     $this->load->view('community/campanas_view',$data);
     $this->load->view('core/footer');
+    }else
+    {
+      if ($tipo=='2') {
+  
+    $this->load->view('core/header_cm');
+    $this->load->view('community/campanas_view',$data);
+    $this->load->view('core/footer');
+      }else{
+        
+          $this->load->view('ingresar');
+        }
+
+      }
 
 
         }

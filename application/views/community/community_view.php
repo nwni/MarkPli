@@ -12,7 +12,7 @@
                      //echo "<p>".$this->session->userdata('nick_usuario')."</p>";
                     }
                 ?> 
-    <h2>Bienvenido <?php echo $usu ?>, a la plataforma Community Manager</h2>
+    <h2>Bienvenido <?php echo $usu ?>, a la plataforma MarkPli</h2>
 
      
 

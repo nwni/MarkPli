@@ -26,8 +26,8 @@ class Campanas_model extends CI_Model {
       'descripcion' =>$datos['descripcion'],
       'objetivos' =>$datos['objetivos'],
       'fecha_inicio' =>$datos['fecha_inicio'],
-      'fecha_final' =>$datos['fecha_final'],
-      'fid_cliente' =>$datos['fid_cliente']);
+      'fecha_final' =>$datos['fecha_final']);
+     // 'fid_cliente' =>$datos['fid_cliente']);
 
     //sentecia para insertar en la base de datos
     $this->db->insert('campanas',$datos);

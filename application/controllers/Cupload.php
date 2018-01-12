@@ -11,9 +11,9 @@ class Cupload extends CI_Controller {
     $this->load->helper(array('url'));
 
     $this->load->database();
-      $this->load->model('mupload');
-          $this->load->model('Mlista');
-           session_start();
+    $this->load->model('mupload');
+     $this->load->model('Mlista');
+      session_start();
 
 
   }
@@ -75,8 +75,33 @@ class Cupload extends CI_Controller {
      $result=$this->db->get('contenidos');
     $data=array('consulta'=>$result);
     
+    // $this->load->view('core/header');
+    // $this->load->view('generadores/vmostrar',$data);
+    // $this->load->view('core/footer');
+
+
+      $tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+
+   
     $this->load->view('core/header');
-    $this->load->view('generadores/vmostrar',$data);
+   $this->load->view('generadores/vmostrar',$data);
     $this->load->view('core/footer');
+      }else
+  {
+    if ($tipo=='3') {
+      
+    $this->load->view('core/header_uplo');
+  $this->load->view('generadores/vmostrar',$data);
+    $this->load->view('core/footer');
+      
+    }else{
+        $this->load->view('ingresar');
+    
+      }
+     
+
+    }
   }
 }  

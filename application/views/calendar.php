@@ -12,8 +12,9 @@
 <body>
 	<div class="container">
 		<ol class="breadcrumb">
-	        <li><a href="<?php echo base_url() ?>calendar">Calendario</a></li>
-	        <li><a href="<?php echo base_url() ?>events">Añadir Publicacion</a></li>
+	        <li><a href="<?php echo base_url() ?>calendar">Calendario  </a></li>
+
+	        <li><a href="<?php echo base_url() ?>events">|   Añadir Publicacion</a></li>
 	    </ol>
 		<div class="row">
 			<div class="page-header">
