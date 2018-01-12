@@ -42,9 +42,26 @@
 
           </td>
            <td>
-          <?php echo "<a href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver | </a>"?>
-            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crearPostMultimdia/<?php echo $contenido['id_contenido']?>">Agendar</a>
+         
+            
 
+      <div class="dropdown">
+				<div class="btn-group">
+					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-item">
+              <?php echo "<a class='btn btn-success btn-sm' href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver</a>"?>
+							</form>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="dropdown-item">
+            <a class="btn btn-warning btn-sm" href="/marketingp/contenidos/crearPostMultimdia/<?php echo $contenido['id_contenido']?>">Agendar</a>
+            </li>
+					</ul>
+				</div>
+			</div>
 
 
           

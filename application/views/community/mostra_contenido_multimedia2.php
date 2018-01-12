@@ -1,6 +1,6 @@
   <div class="container" align="center">
 
-    <h1>Agendar Publicaion Multimedia</h1>
+    <h1>Agendar Publicación Multimedia</h1>
 
     <table class="table table-bordered" align="center">
       <thead>
@@ -42,9 +42,25 @@
 
           </td>
            <td>
-          <?php echo "<a href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver | </a>"?>
-            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crearPostMultimdia2/<?php echo $contenido['id_contenido']?>">Crear</a>
-
+          
+            
+            <div class="dropdown">
+				<div class="btn-group">
+					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-item">
+              <?php echo "<a class='btn btn-success btn-sm' href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver</a>"?>
+							</form>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="dropdown-item">
+            <a class="btn btn-warning btn-sm" href="/marketingp/contenidos/crearPostMultimdia2/<?php echo $contenido['id_contenido']?>">Crear</a>
+            </li>
+					</ul>
+				</div>
+			</div>
 
 
           

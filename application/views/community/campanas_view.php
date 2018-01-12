@@ -3,7 +3,7 @@
 <h2 align="center">Campañas Publicitarias </h2>
 <br>
 </div>
-<table class="table table-hover campana-table" align="center">
+<table class="table table-hover" align="center">
     <thead>
       <tr>
         <th>Numero de Campaña</th>
@@ -13,8 +13,7 @@
         <th>Fecha Inicio</th>
         <th>Fecha Final</th>
  
-        <th>Modificar</th>
-        <th>Eliminar</th>
+        <th>Acciones</th>
       </tr>
     </thead>
 
@@ -43,14 +42,24 @@
       </td>
      
       <td>
-      
-        <?php echo "<a  href=".base_url()."Campanas/Eliminar/".$row->id_campana.">Eliminar </a>"?>
-       
-    </td>
- <td>
 
+        <div class="dropdown">
+				<div class="btn-group">
+					<button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-cogs" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li class="dropdown-item">
+              <?php echo "<a  class='btn btn-danger btn-sm' href=".base_url()."Campanas/Eliminar/".$row->id_campana.">Eliminar </a>"?>
+						</li>
+						<div class="dropdown-divider"></div>
+						<li class="dropdown-item">
+              <?php echo "<a class='btn btn-warning btn-sm' href=".base_url()."Campanas/editar/".$row->id_campana.">Modificar</a>"?>
+            </li>
+					</ul>
+				</div>
+			</div>
 
- <?php echo "<a href=".base_url()."Campanas/editar/".$row->id_campana.">Modificar</a>"?>
  </td>
     </tr>
   <?php endforeach; ?>
