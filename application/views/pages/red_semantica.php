@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-4">
 		<br>
-			<h2 align="center">Temas Principales</h2>
+			<h2 align="center">Categorias Principales</h2>
 			<br>
 			<br>
 			<br>

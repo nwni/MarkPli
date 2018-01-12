@@ -18,7 +18,7 @@ class Cupload extends CI_Controller {
   }
 
   public function index(){
-
+session_start();
   $tipo = $this->session->userdata('tipos_usuarios');
 
   if ($tipo=='1') {
@@ -39,6 +39,9 @@ class Cupload extends CI_Controller {
     $this->load->view('core/header_uplo');
     $this->load->view('generadores/vUploadContenido',$data);
     $this->load->view('core/footer');
+      }
+      else{
+        $this->load->view('ingresar');
       }
 
     }

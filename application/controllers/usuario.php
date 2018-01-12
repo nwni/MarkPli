@@ -8,14 +8,25 @@ class usuario extends CI_Controller {
   }
 
 public function index(){
-		$this->load->view('core/header');
-		$this->load->view('registro2');
-		$this->load->view('core/footer');
+
+session_start();
+	$tipo = $this->session->userdata('tipos_usuarios');
+
+  if ($tipo=='1') {
+   
+    $this->load->view('core/header');
+    $this->load->view('registro2');
+    $this->load->view('core/footer');
+    }else
+    {
+  		$this->load->view('ingresar');
+
+      }
+		
 	}
+
 public function mostrar(){
 		$this->load->view('core/header');
-		
-		
 		$datos['usuarios']= $this->usuario_model->getUsuarios();
 		$this->load->view('usuarios_view.php',$datos);
 		$this->load->view('core/footer');

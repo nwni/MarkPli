@@ -9,6 +9,7 @@ class RedSemantica extends CI_Controller
 		$this->load->model('Red_model');
 	}
     public function red(){
+      session_start();
         $data = array();
         $tipo = $this->session->userdata('tipos_usuarios');
         $data['records'] = $this->Red_model->getTypes();
@@ -21,14 +22,7 @@ class RedSemantica extends CI_Controller
     $this->load->view('templates/footer');
       }else
   {
-    if ($tipo=='2') {
-  
-    }else{
-      if ($tipo=='3') {
-        
-      }
-
-    }
+     $this->load->view('ingresar');
   }
     }
 }

@@ -12,7 +12,7 @@ class Campanas extends CI_Controller {
   }
 
   public function index(){
-
+session_start();
 $tipo = $this->session->userdata('tipos_usuarios');
 
   if ($tipo=='1') {
@@ -30,8 +30,8 @@ $tipo = $this->session->userdata('tipos_usuarios');
     $this->load->view('community/campanas_view',$data);
     $this->load->view('core/footer');
       }else{
-        if ($tipo=='3') {
-          
+        
+          $this->load->view('ingresar');
         }
 
       }
@@ -39,7 +39,7 @@ $tipo = $this->session->userdata('tipos_usuarios');
          
 
 
-  }
+  
 
   // public function view($idc){
   // //  $data['campana'] = $this->campanas_model->get_campanas($idc);
