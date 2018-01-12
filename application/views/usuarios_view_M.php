@@ -26,10 +26,9 @@
 
                <div class="col-md-6">
                   <label >Tipo de usuario:</label>
-          
-                                                  <select name="Tipo" class="form-control" required>
+                    <select name="Tipo" class="form-control" required>
                     <option value="">Seleccione un tipo</option>  
-                    <option value="Comunnity">Comunnity</option>  
+                    <option value="Comunnity">Community</option>  
                     <option value="Administrador">Administrador</option>
                     <option value="Uploader">Uploader</option>    
             </select>

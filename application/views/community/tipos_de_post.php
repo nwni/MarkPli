@@ -5,7 +5,7 @@
 </head>
 <body>
 <br>
-  <h2 align="center">Crear Publicacion</h2>
+  <h2 align="center">Crear Publicación</h2>
 <br>
 <table class="table table-bordered" align="center" text-align="center">
   <tr>

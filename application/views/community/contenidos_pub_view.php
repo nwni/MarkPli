@@ -1,8 +1,8 @@
   <div class="container" align="center">
-    <h1>Crear Publicaion</h1>
+    <h1>Crear Publicación</h1>
 
    
-    <table class="table table-bordered" align="center">
+    <table class="table table-hover" align="center">
       <thead>
           <tr>
             <th>Nombre del contenido</th>
@@ -40,11 +40,7 @@
           </td>
            <td>
           <?php echo "<a href=".base_url()."CverContenido/ver/".$contenido['id_contenido'].">Ver | </a>"?>
-            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crear/<?php echo $contenido['id_contenido']?>">Crear Post</a>
-
-
-
-          
+            <a class="btn btn-primary btn-md" href="/marketingp/contenidos/crear/<?php echo $contenido['id_contenido']?>">Crear Post</a>         
         </td>
     
       
